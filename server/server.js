@@ -1,6 +1,7 @@
 require('dotenv').config();
 
-const { application } = require('express');
+// const { application } = require('express');
+const mongoose = require('mongoose')
 const express = require('express')
 const habitRoutes = require('./routes/habits')
 
@@ -18,9 +19,17 @@ app.use((req, res, next) => {
 //setting up routes to habits
 app.use('/api/habits', habitRoutes)
 
-
-//listens for requests
+// connect to DB && async
+mongoose.connect(process.env.MONGO_URI)
+.then(() => {
+//listens for requests once we are connected to the database
 app.listen(process.env.PORT, () => {
-    console.log('listening on port', process.env.PORT)
+    console.log('connected to db && listening on port', process.env.PORT)
 })
+})
+.catch((error) => {
+    console.log(error)
+})
+
+
 
