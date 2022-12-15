@@ -1,19 +1,22 @@
 require('dotenv').config();
+
+const { application } = require('express');
 const express = require('express')
+const habitRoutes = require('./routes/habits')
 
 //start the server
 const app = express();
 
-//global middleware
+//global middleware to access request
+app.use(express.json());
+
 app.use((req, res, next) => {
     console.log(req.path, req.method)
     next();
 })
 
-//setting up routes
-app.get('/', (req, res) => {
-    res.json({message: "welcome to the app"})
-})
+//setting up routes to habits
+app.use('/api/habits', habitRoutes)
 
 
 //listens for requests
