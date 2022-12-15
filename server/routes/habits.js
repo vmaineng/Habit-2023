@@ -1,4 +1,5 @@
 const express = require('express');
+const Habit = require('../models/Habit')
 
 //creates an instance of router
 const router = express.Router();
@@ -14,8 +15,15 @@ router.get('/:id', (req, res) => {
 })
 
 //post a new habit
-router.post('/:id', (req, res) => {
-    res.json({msg: 'post a new habit'})
+router.post('/', async (req, res) => {
+    const {title, description} = req.body
+    try {
+        const habit = await Habit.create({ title, description})
+        res.status(200).json(habit)
+    } catch(error) {
+        res.status(400).json({error: error.message})
+    }
+   
 })
 
 //delete a habit
