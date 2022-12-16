@@ -1,4 +1,6 @@
 import { useEffect, useState } from "react";
+import HabitDetails from "../components/HabitDetails";
+import HabitForm from "../components/HabitForm";
 
 function Home() {
   const [habits, setHabits] = useState(null);
@@ -18,7 +20,10 @@ function Home() {
   return (
     <div>
       Home
-      {habits && habits.map((habit) => <p key={habit.id}>{habit.title} </p>)}
+      {habits && habits.map((habit) => (
+        <HabitDetails key={habit._id} habit={habit} /> 
+      ))}
+      <HabitForm />
     </div>
   );
 }
