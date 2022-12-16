@@ -1,6 +1,6 @@
 const express = require("express");
 const Habit = require("../models/Habit");
-const { createHabit, getHabit, getHabits } = require("../controllers/habitController");
+const { createHabit, getHabit, getHabits, deleteHabit,updateHabit } = require("../controllers/habitController");
 
 //creates an instance of router
 const router = express.Router();
@@ -15,13 +15,9 @@ router.get("/:id", getHabit);
 router.post("/", createHabit);
 
 //delete a habit
-router.delete("/:id", (req, res) => {
-  res.json({ msg: "delete habit" });
-});
+router.delete("/:id", deleteHabit);
 
 //patch a habit
-router.patch("/:id", (req, res) => {
-  res.json({ msg: "update habit" });
-});
+router.patch("/:id", updateHabit);
 
 module.exports = router;
