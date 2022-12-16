@@ -5,6 +5,7 @@ import Box from "@mui/material/Box";
 import Purple from "../assets/purple.png";
 import Typography from "@mui/material/Typography";
 import Grid from "@mui/material/Grid";
+import Note from "../assets/note.png";
 
 function Landingpage() {
   return (
@@ -21,7 +22,7 @@ function Landingpage() {
       >
         <Grid container spacing={5}>
           <Grid item xs={12}>
-            <Box
+            {/* <Box
               sx={{
                 position: "absolute",
                 left: 0,
@@ -32,7 +33,7 @@ function Landingpage() {
                 opacity: 0.5,
                 zIndex: -1,
               }}
-            />
+            /> */}
 
             <Typography
               color="inherit"
@@ -43,6 +44,52 @@ function Landingpage() {
               Habit Breaker
             </Typography>
             <img src={Purple} alt="wonder" width="1100" height="500" />
+          </Grid>
+        </Grid>
+      </Container>
+
+      {/* Values */}
+      <Container sx={{ mt: 15, mb: 30, display: "flex", position: "relative" }}>
+        <Grid container spacing={5}>
+          <Grid item xs={12} md={4}>
+            <Box
+              component="img"
+              src={Note}
+              alt="suitcase"
+              sx={{ height: 150 }}
+            />
+            <Typography variant="h6" sx={{ my: 5 }}>
+              Easy and efficient
+            </Typography>
+            <Typography variant="h5">{"Star the year with a bang!"}</Typography>
+          </Grid>
+        </Grid>
+        <Grid container spacing={5}>
+          <Grid item xs={12} md={4}>
+            <Box
+              component="img"
+              src={Note}
+              alt="suitcase"
+              sx={{ height: 150 }}
+            />
+            <Typography variant="h6" sx={{ my: 5 }}>
+              Easy and efficient
+            </Typography>
+            <Typography variant="h5">{"Star the year with a bang!"}</Typography>
+          </Grid>
+        </Grid>
+        <Grid container spacing={5}>
+          <Grid item xs={12} md={4}>
+            <Box
+              component="img"
+              src={Note}
+              alt="suitcase"
+              sx={{ height: 150 }}
+            />
+            <Typography variant="h6" sx={{ my: 5 }}>
+              Easy and efficient
+            </Typography>
+            <Typography variant="h5">{"Star the year with a bang!"}</Typography>
           </Grid>
         </Grid>
       </Container>
