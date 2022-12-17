@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import HabitDetails from "../components/HabitDetails";
 import HabitForm from "../components/HabitForm";
 
-function Home() {
+function Dashboard() {
   const [habits, setHabits] = useState(null);
 
   useEffect(() => {
@@ -19,7 +19,7 @@ function Home() {
 
   return (
     <div>
-      Home
+      Dashboard
       {habits && habits.map((habit) => (
         <HabitDetails key={habit._id} habit={habit} /> 
       ))}
@@ -28,4 +28,4 @@ function Home() {
   );
 }
 
-export default Home;
+export default Dashboard;
