@@ -80,4 +80,4 @@ const updateUser = async (req, res) => {
   res.status(200).json({ user });
 };
 
-module.exports = { createUser, getUsers, getUsers, deleteUser, updateUser };
+module.exports = { createUser, getUsers, getUser, deleteUser, updateUser };
