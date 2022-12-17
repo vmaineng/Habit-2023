@@ -1,11 +1,13 @@
 import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-
+import { useTheme } from '@mui/material';
 import Landingpage from "./pages/Landingpage";
 import Signup from "./pages/Signup";
 import Login from "./pages/Login";
 
 function App() {
+  const theme = useTheme();
+  
   return (
     <div className="App">
       <BrowserRouter>

@@ -7,8 +7,11 @@ import Typography from "@mui/material/Typography";
 import Grid from "@mui/material/Grid";
 import Note from "../assets/note.png";
 import Link from '@mui/material/Link';
+import { useTheme } from '@mui/material/styles';
 
 function Landingpage() {
+  let theme = useTheme();
+  
   return (
     <div>
       <Navbar />
@@ -98,7 +101,7 @@ function Landingpage() {
       {/* Footer */}
       <Typography
       component="footer"
-      sx={{ display: 'flex', bgcolor: 'secondary.light' }}
+      sx={{ display: 'flex', bgcolor: 'lilac' }}
     >
 
 <Container sx={{ my: 8, display: 'flex' }}>
