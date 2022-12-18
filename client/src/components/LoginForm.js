@@ -1,19 +1,21 @@
 import {useState} from 'react'
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
+// import { useNavigate } from 'react-router-dom';
 // import { Field} from 'react-final-form';
 
 function LoginForm() {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
     const [error, setError] = useState(null);
+    // const navigate = useNavigate;
 
 const handleSubmit = async (e) => {
     e.preventDefault();
 
 const user = {username, password}
 
-const response = await fetch("/api/users", {
+const response = await fetch("/api/login", {
     method: "POST",
     body: JSON.stringify(user),
     headers: {

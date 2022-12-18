@@ -1,6 +1,7 @@
 import {useState} from 'react'
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
+import { useNavigate } from 'react-router-dom';
 
 function SignupForm() {
     const [firstName, setFirstName]= useState('');
@@ -8,13 +9,14 @@ function SignupForm() {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
     const [error, setError] = useState(null);
+    const navigate = useNavigate;
 
 const handleSubmit = async (e) => {
     e.preventDefault();
 
 const user = {firstName, lastName, username, password}
 
-const response = await fetch("/api/users", {
+const response = await fetch("/signup", {
     method: "POST",
     body: JSON.stringify(user),
     headers: {
@@ -22,7 +24,7 @@ const response = await fetch("/api/users", {
     },
 })
 
-const json = await response.json();
+const json = await response.json().then(navigate('/api/home'));
 
 if (!response.ok) {
     setError(json.error)
@@ -33,7 +35,7 @@ if (response.ok) {
     setLastName("");
     setUsername("");
     setPassword("");
-    console.log("user logged in successfully");
+    console.log("user logged in successfully")
 }}
 
   return (
@@ -43,12 +45,12 @@ if (response.ok) {
         <input type="text" onChange={(e) => setFirstName(e.target.value)} value={firstName} />  
         <label> Last Name</label>
         <input type="text" onChange={(e) => setLastName(e.target.value)} value={lastName} />  
-        <label> Login</label>
+        <label> username</label>
         <input type="text" onChange={(e) => setUsername(e.target.value)} value={username} />  
         <label>Password</label>
         <input type="text" onChange={(e) => setPassword(e.target.value)} value={password} />  
        
-       <Button type="submit">Log in</Button>
+       <Button type="submit">Sign up</Button>
     </Box>
     </form>
     {error && error}</div>

@@ -73,7 +73,7 @@ function Navbar() {
             >
               <Box display="flex" alignItems={"inherit"}>
                 <Typography
-                  variant="h6"
+                  variant="h5"
                   component="a"
                   href="/"
                   sx={{

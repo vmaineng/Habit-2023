@@ -7,10 +7,10 @@ import Typography from "@mui/material/Typography";
 import Grid from "@mui/material/Grid";
 import Note from "../assets/note.png";
 import Link from '@mui/material/Link';
-import { useTheme } from '@mui/material/styles';
+// import { useTheme } from '@mui/material/styles';
 
 function Landingpage() {
-  let theme = useTheme();
+  // let theme = useTheme();
   
   return (
     <div>
