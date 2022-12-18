@@ -1,7 +1,6 @@
-import { useEffect, useState } from "react";
+import React from "react";
 import Navbar from "../components/Navbar";
-import HabitDetails from "../components/HabitDetails";
-import HabitForm from "../components/HabitForm";
+
 import {
   Box,
   Card,
@@ -13,30 +12,18 @@ import {
   Typography,
   useTheme,
 } from "@mui/material";
-import LaptopMacIcon from "@mui/icons-material/LaptopMac";
-import PhoneIcon from "@mui/icons-material/Phone";
-import TabletIcon from "@mui/icons-material/Tablet";
+import FavoriteIcon from '@mui/icons-material/Favorite';
+import PaidIcon from '@mui/icons-material/Paid';
+import DirectionsRunIcon from '@mui/icons-material/DirectionsRun';
  import { Doughnut } from "react-chartjs-2";
- import {Chart, ArcElement} from 'chart.js'
+ import {Chart, ArcElement} from 'chart.js';
+ import DashboardGoals from "../components/DashboardGoals";
 
 function Dashboard() {
   //need to register all elements using Chart.js - doughnut
   Chart.register(ArcElement);
+ 
   const theme = useTheme();
-
-  const [habits, setHabits] = useState(null);
-
-  useEffect(() => {
-    const fetchHabits = async () => {
-      const response = await fetch("/api/habits");
-      const json = await response.json();
-      if (response.ok) {
-        setHabits(json);
-      }
-    };
-
-    fetchHabits();
-  }, []);
 
   // creating dashboard results
   const data = {
@@ -78,19 +65,19 @@ function Dashboard() {
     {
       title: "Health",
       value: 63,
-      icon: LaptopMacIcon,
+      icon: FavoriteIcon,
       color: "#3F51B5",
     },
     {
       title: "Wealth",
       value: 15,
-      icon: TabletIcon,
+      icon: PaidIcon,
       color: "#E53935",
     },
     {
       title: "Wellness",
       value: 23,
-      icon: PhoneIcon,
+      icon: DirectionsRunIcon,
       color: "#FB8C00",
     },
   ];
@@ -153,18 +140,8 @@ function Dashboard() {
       </CardContent>
       </Card>
       </Grid>
-      Dashboard
-      <Grid
-            item
-            lg={8}
-            md={12}
-            xl={9}
-            xs={12}
-          >
-      {habits &&
-        habits.map((habit) => <HabitDetails key={habit._id} habit={habit} />)}
-      <HabitForm />
-      </Grid>
+     <DashboardGoals /> 
+     
       </Container>
       </Box>
     </div>
