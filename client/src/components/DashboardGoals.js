@@ -39,6 +39,7 @@ function DashboardGoals() {
             xl={9}
             xs={12}
           >
+            
       {habits &&
         habits.map((habit) => <HabitDetails key={habit._id} habit={habit} />)}
       <HabitForm />
