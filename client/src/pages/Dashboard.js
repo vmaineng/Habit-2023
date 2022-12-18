@@ -1,10 +1,14 @@
 import { useEffect, useState } from "react";
+import Navbar from "../components/Navbar";
 import HabitDetails from "../components/HabitDetails";
 import HabitForm from "../components/HabitForm";
 import {
   Box,
+  Card,
   CardContent,
   CardHeader,
+  Container,
+  Grid,
   Divider,
   Typography,
   useTheme,
@@ -16,6 +20,7 @@ import TabletIcon from "@mui/icons-material/Tablet";
  import {Chart, ArcElement} from 'chart.js'
 
 function Dashboard() {
+  //need to register all elements using Chart.js - doughnut
   Chart.register(ArcElement);
   const theme = useTheme();
 
@@ -92,7 +97,24 @@ function Dashboard() {
 
   return (
     <div>
-      <CardHeader title="Traffic by Device" />
+      <Navbar />
+      <Box
+      component="main"
+      sx={{
+        flexGrow: 1,
+        py: 8
+      }}
+    >
+      <Container maxWidth={false}>
+      <Grid
+            item
+            lg={8}
+            md={12}
+            xl={9}
+            xs={12}
+          >
+      <Card sx={{ height: '100%' }} > 
+      <CardHeader title="Dashboard" />
       <Divider />
       <CardContent>
         <Box
@@ -129,10 +151,22 @@ function Dashboard() {
           ))}
         </Box>
       </CardContent>
+      </Card>
+      </Grid>
       Dashboard
+      <Grid
+            item
+            lg={8}
+            md={12}
+            xl={9}
+            xs={12}
+          >
       {habits &&
         habits.map((habit) => <HabitDetails key={habit._id} habit={habit} />)}
       <HabitForm />
+      </Grid>
+      </Container>
+      </Box>
     </div>
   );
 }
