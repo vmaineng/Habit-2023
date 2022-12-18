@@ -31,7 +31,7 @@ function DashboardGoals() {
     }, []);
 
   return (
-    <div>DashboardGoals
+    <div>
          <Grid
             item
             lg={8}

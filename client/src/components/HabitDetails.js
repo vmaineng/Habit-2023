@@ -8,8 +8,10 @@ import {
   Grid,
   Divider,
   Typography,
+  IconButton,
   useTheme,
 } from "@mui/material";
+import FeedIcon from '@mui/icons-material/Feed';
 
 function HabitDetails({ habit }) {
   const theme = useTheme();
@@ -32,7 +34,9 @@ function HabitDetails({ habit }) {
               pb: 3,
             }}
           >
-            Icons
+            <IconButton> 
+            <FeedIcon />
+            </IconButton>
              </Box>
             <Typography
               align="center"
