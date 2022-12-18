@@ -35,7 +35,7 @@ if (response.ok) {
 }; 
 
   return (
-    <div>LoginForm
+    <div>
 <form onSubmit={handleSubmit}> 
 <Box sx={{ mt: 6}}>
     <label> Login</label>
