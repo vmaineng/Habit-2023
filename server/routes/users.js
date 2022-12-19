@@ -6,7 +6,7 @@ const { createUser, getUser, getUsers, deleteUser,updateUser } = require("../con
 const router = express.Router();
 
 //get all user
-router.get("/", getUser);
+router.get("/", getUsers);
 
 //get one user
 router.get("/:id", getUser);

@@ -7,6 +7,7 @@ const express = require('express')
 //routes
 const habitRoutes = require('./routes/habits')
 const userRoutes = require('./routes/users')
+const authRoutes = require('./routes/auth')
 
 //jwt
 // const jwt = require('jsonwebtoken');
@@ -25,6 +26,7 @@ app.use((req, res, next) => {
 //setting up routes to habits and users
 app.use('/api/habits', habitRoutes)
 app.use('/api/users', userRoutes)
+app.use('/api/auth', authRoutes);
 
 // connect to DB && async
 mongoose.connect(process.env.MONGO_URI)
