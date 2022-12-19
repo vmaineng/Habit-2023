@@ -8,6 +8,9 @@ const express = require('express')
 const habitRoutes = require('./routes/habits')
 const userRoutes = require('./routes/users')
 
+//jwt
+// const jwt = require('jsonwebtoken');
+
 //start the server
 const app = express();
 
@@ -19,7 +22,7 @@ app.use((req, res, next) => {
     next();
 })
 
-//setting up routes to habits
+//setting up routes to habits and users
 app.use('/api/habits', habitRoutes)
 app.use('/api/users', userRoutes)
 

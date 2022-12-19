@@ -2,6 +2,8 @@ import {useState} from 'react'
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import { useNavigate } from 'react-router-dom';
+import TextField from '@mui/material/TextField';
+import Grid from '@mui/material/Grid';
 
 function SignupForm() {
     const [firstName, setFirstName]= useState('');
@@ -24,7 +26,8 @@ const response = await fetch("/signup", {
     },
 })
 
-const json = await response.json().then(navigate('/api/home'));
+const json = await response.json();
+navigate('/home');
 
 if (!response.ok) {
     setError(json.error)
@@ -39,8 +42,29 @@ if (response.ok) {
 }}
 
   return (
-    <div><form onSubmit={handleSubmit}> 
-    <Box sx={{ mt: 5}}>
+    <div>
+        <Box
+          sx={{
+            marginTop: 8,
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+          }}
+        >
+        <form onSubmit={handleSubmit}> 
+    <Box sx={{ mt: 3}}>
+    <Grid container spacing={2}>
+              {/* <Grid item xs={12} sm={6}>
+              <TextField
+                  autoComplete="given-name"
+                  name="firstName"
+                  required
+                  fullWidth
+                  id="firstName"
+                  label="First Name"
+                  autoFocus
+                />
+              </Grid> */}
     <label> First Name</label>
         <input type="text" onChange={(e) => setFirstName(e.target.value)} value={firstName} />  
         <label> Last Name</label>
@@ -51,9 +75,12 @@ if (response.ok) {
         <input type="text" onChange={(e) => setPassword(e.target.value)} value={password} />  
        
        <Button type="submit">Sign up</Button>
+       </Grid>
     </Box>
     </form>
-    {error && error}</div>
+    {error && error}
+    </Box>
+    </div>
   )
 }
 

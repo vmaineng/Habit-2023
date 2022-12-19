@@ -12,9 +12,9 @@ function Signup() {
       </Typography>
      <SignupForm />
       <Typography variant="body2" align="center">
-        {"Not a member yet? "}
+        {"Already a member? "}
         <Link to="/login" align="center" underline="always">
-          Have a log in?
+          Log in here
         </Link>
       </Typography>
     </div>
