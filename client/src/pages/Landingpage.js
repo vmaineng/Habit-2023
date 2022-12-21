@@ -24,7 +24,7 @@ function Landingpage() {
           alignItems: "center",
         }}
       >
-        <Grid container spacing={5}>
+        <Grid container spacing={2}>
           <Grid item xs={12}>
             {/* <Box
               sx={{
@@ -53,22 +53,22 @@ function Landingpage() {
       </Container>
 
       {/* Values */}
-      <Container sx={{ mt: 15, mb: 30, display: "flex", position: "relative" }}>
-        <Grid container spacing={5}>
-          <Grid item xs={12} md={4}>
+      <Container sx={{ mt: 10, mb: 15, display: "flex", position: "relative" }}>
+        <Grid container spacing={2}>
+          <Grid item xs={1} md={4}>
             <Box
               component="img"
               src={Note}
               alt="suitcase"
               sx={{ height: 150 }}
             />
-            <Typography variant="h6" sx={{ my: 5 }}>
-              Easy and efficient
+            <Typography variant="h6" sx={{ my: 3 }}>
+              Motivated
             </Typography>
-            <Typography variant="h5">{"Star the year with a bang!"}</Typography>
+            <Typography variant="h5">{"Track your habits, set goals, and stay motivated to reach them!"}</Typography>
           </Grid>
         </Grid>
-        <Grid container spacing={5}>
+        <Grid container spacing={2}>
           <Grid item xs={12} md={4}>
             <Box
               component="img"
@@ -76,13 +76,13 @@ function Landingpage() {
               alt="suitcase"
               sx={{ height: 150 }}
             />
-            <Typography variant="h6" sx={{ my: 5 }}>
-              Easy and efficient
+            <Typography variant="h6" sx={{ my: 3 }}>
+              Positivity
             </Typography>
-            <Typography variant="h5">{"Star the year with a bang!"}</Typography>
+            <Typography variant="h5">{"A simple way to build positive habits and break bad ones."}</Typography>
           </Grid>
         </Grid>
-        <Grid container spacing={5}>
+        <Grid container spacing={2}>
           <Grid item xs={12} md={4}>
             <Box
               component="img"
@@ -90,10 +90,10 @@ function Landingpage() {
               alt="suitcase"
               sx={{ height: 150 }}
             />
-            <Typography variant="h6" sx={{ my: 5 }}>
-              Easy and efficient
+            <Typography variant="h6" sx={{ my: 3 }}>
+              Empower
             </Typography>
-            <Typography variant="h5">{"Star the year with a bang!"}</Typography>
+            <Typography variant="h5">{"Create powerful habits and make your dreams come true!"}</Typography>
           </Grid>
         </Grid>
       </Container>
