@@ -12,7 +12,7 @@ function SignupForm() {
     const [password, setPassword] = useState("");
     const [email, setEmail] = useState("");
     const [error, setError] = useState(null);
-    const navigate = useNavigate;
+    const navigate = useNavigate();
 
 const handleSubmit = async (e) => {
     e.preventDefault();
@@ -40,6 +40,7 @@ if (response.ok) {
     setPassword("");
     setEmail("");
     console.log("user logged in successfully")
+    navigate("/home")
 }}
 
   return (
