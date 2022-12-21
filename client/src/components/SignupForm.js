@@ -10,15 +10,16 @@ function SignupForm() {
     const [lastName, setLastName]= useState('');
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
+    const [email, setEmail] = useState("");
     const [error, setError] = useState(null);
     const navigate = useNavigate;
 
 const handleSubmit = async (e) => {
     e.preventDefault();
 
-const user = {firstName, lastName, username, password}
+const user = {firstName, lastName, username, email, password}
 
-const response = await fetch("/signup", {
+const response = await fetch("/api/users/signup", {
     method: "POST",
     body: JSON.stringify(user),
     headers: {
@@ -27,7 +28,6 @@ const response = await fetch("/signup", {
 })
 
 const json = await response.json();
-navigate('/home');
 
 if (!response.ok) {
     setError(json.error)
@@ -38,6 +38,7 @@ if (response.ok) {
     setLastName("");
     setUsername("");
     setPassword("");
+    setEmail("");
     console.log("user logged in successfully")
 }}
 
@@ -73,6 +74,8 @@ if (response.ok) {
         <input type="text" onChange={(e) => setUsername(e.target.value)} value={username} />  
         <label>Password</label>
         <input type="text" onChange={(e) => setPassword(e.target.value)} value={password} />  
+        <label>email</label>
+        <input type="text" onChange={(e) => setEmail(e.target.value)} value={email} />  
        
        <Button type="submit">Sign up</Button>
        </Grid>
