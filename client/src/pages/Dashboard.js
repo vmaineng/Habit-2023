@@ -18,11 +18,22 @@ import DirectionsRunIcon from '@mui/icons-material/DirectionsRun';
  import { Doughnut } from "react-chartjs-2";
  import {Chart, ArcElement} from 'chart.js';
  import DashboardGoals from "../components/DashboardGoals";
+ import { styled } from '@mui/material/styles';
 
 function Dashboard() {
   //need to register all elements using Chart.js - doughnut
   Chart.register(ArcElement);
  
+  const DashboardLayoutRoot = styled('div')(({ theme }) => ({
+    display: 'flex',
+    flex: '1 1 auto',
+    maxWidth: '100%',
+    paddingTop: 64,
+    [theme.breakpoints.up('lg')]: {
+      paddingLeft: 280
+    }
+  }));
+
   const theme = useTheme();
 
   // creating dashboard results
@@ -85,6 +96,7 @@ function Dashboard() {
   return (
     <div>
       <Navbar />
+      
       <Box
       component="main"
       sx={{
@@ -92,7 +104,9 @@ function Dashboard() {
         py: 8
       }}
     >
+      
       <Container maxWidth={false}>
+      <DashboardLayoutRoot>
       <Grid
             item
             lg={8}
@@ -140,6 +154,7 @@ function Dashboard() {
       </CardContent>
       </Card>
       </Grid>
+      </DashboardLayoutRoot>
      <DashboardGoals /> 
      
       </Container>
