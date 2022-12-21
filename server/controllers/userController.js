@@ -80,4 +80,31 @@ const updateUser = async (req, res) => {
   res.status(200).json({ user });
 };
 
-module.exports = { createUser, getUsers, getUser, deleteUser, updateUser };
+//for '/login' endpoint
+const login = async (req, res, next) => {
+  const {email, password} = req.body;
+
+  if (!email || !password) throw new Error("Please provide an email and password");
+
+  const user = await User.findOne({ email}).select('+password');
+
+  if (!user) throw new Error("Invalid credientials");
+
+  const isMatch = await user.matchPassword(password);
+
+  if (!isMatch) throw new Error("Invalid credentials");
+
+  sendTokenResponse(user, 200, res);
+}
+
+// For '/logout' endpoint
+const logout = async (req, res, next) => {
+  res.cookie('token', 'none', {
+      expires: new Date(Date.now() + 10 * 1000), 
+      httpOnly: true
+  })
+
+  res.status(200).json({ success: true })
+}
+
+module.exports = { createUser, getUsers, getUser, deleteUser, updateUser, login, logout};

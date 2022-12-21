@@ -7,7 +7,7 @@ const express = require('express')
 //routes
 const habitRoutes = require('./routes/habits')
 const userRoutes = require('./routes/users')
-const authRoutes = require('./routes/auth')
+const authRoutes = require('./middlewares/auth')
 
 //jwt
 // const jwt = require('jsonwebtoken');
