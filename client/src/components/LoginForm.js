@@ -15,7 +15,7 @@ const handleSubmit = async (e) => {
 
 const user = {username, password}
 
-const response = await fetch("/api/login", {
+const response = await fetch("/login", {
     method: "POST",
     body: JSON.stringify(user),
     headers: {

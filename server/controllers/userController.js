@@ -1,4 +1,4 @@
-const { default: mongoose } = require("mongoose");
+// const { default: mongoose } = require("mongoose");
 const User = require("../models/User");
 
 //get all users
@@ -25,7 +25,7 @@ const getUser = async (req, res, next) => {
 
 //create a User
 const createUser = async (req, res, next) => {
-  const { username, password, firstName, lastName, profileImage } = req.body;
+  const { username, password, firstName, lastName, email, profileImage } = req.body;
 
   try {
     const user = await User.create({
@@ -33,6 +33,7 @@ const createUser = async (req, res, next) => {
       password,
       firstName,
       lastName,
+      email,
       profileImage,
     });
     res.status(200).json(user);

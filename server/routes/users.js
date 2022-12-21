@@ -12,8 +12,8 @@ router.get("/", getUsers);
 //get one user
 router.get("/:id", getUser);
 
-//post a new user
-router.post("/", createUser);
+//post a new user -- should be signup?
+router.post("/signup", createUser);
 
 //delete a user
 router.delete("/:id", deleteUser);
@@ -22,9 +22,11 @@ router.delete("/:id", deleteUser);
 router.patch("/:id", updateUser);
 
 //login
-router.route('/login')
-      .post(login)
+// router.route('/login')
+//       .post(login)
 
+
+router.post("/login", login)
 
 //logout
 router.route('/logout')

@@ -1,8 +1,6 @@
-// const express = require('express');
+
 const jwt = require('jsonwebtoken');
-// const bcrypt = require('bcryptjs');
 const User = require('../models/User');
-// const { response } = require('express');
 
 const protectedRoute = async (req, res, next) => {
     let token; 
