@@ -12,7 +12,11 @@ import {
 import FeedIcon from "@mui/icons-material/Feed";
 
 function HabitDetails({ habit, deleteHabit, updateHabit }) {
-  const [updatedHabit, setUpdatedHabit] = useState(habit);
+  const [updatedHabit, setUpdatedHabit] = useState({
+    title: habit.title,
+    description: habit.description
+
+  });
 
   const theme = useTheme();
 
@@ -29,16 +33,24 @@ function HabitDetails({ habit, deleteHabit, updateHabit }) {
 
   function handleUpdateHabit(e) {
     e.preventDefault();
+
     fetch(`/api/habits/${habit._id}`, {
       method: "PATCH",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ updatedHabit}),
+      body: JSON.stringify( updatedHabit),
     })
       .then((r) => r.json())
-      .then((updatedHabit) => {
-        updateHabit(updatedHabit);
+      .then((updatedHabits) => {
+        updateHabit(updatedHabits);
       });
   }
+
+  // function handleHabitChange(e) {
+  //   setUpdatedHabit((updatedHabit) => ({
+  //     ...updatedHabit,
+  //     [e.target.des
+  //   })) 
+  // }
 
   return (
     <div>
@@ -77,9 +89,9 @@ function HabitDetails({ habit, deleteHabit, updateHabit }) {
           <form onSubmit={handleUpdateHabit}>
             <input
               type="text"
-              // name="updatedHabit"
+               name="updatedHabit"
               placeholder="update description"
-              value={updatedHabit}
+              value={updatedHabit.description}
               onChange={(e) => setUpdatedHabit(e.target.value)}
             />
             <Button size="small">Update</Button>
