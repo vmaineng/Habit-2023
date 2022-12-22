@@ -12,26 +12,36 @@ import {
   Typography,
   useTheme,
 } from "@mui/material";
-import FavoriteIcon from '@mui/icons-material/Favorite';
-import PaidIcon from '@mui/icons-material/Paid';
-import DirectionsRunIcon from '@mui/icons-material/DirectionsRun';
- import { Doughnut } from "react-chartjs-2";
- import {Chart, ArcElement} from 'chart.js';
- import DashboardGoals from "../components/DashboardGoals";
- import { styled } from '@mui/material/styles';
+import FavoriteIcon from "@mui/icons-material/Favorite";
+import PaidIcon from "@mui/icons-material/Paid";
+import DirectionsRunIcon from "@mui/icons-material/DirectionsRun";
+import { Doughnut } from "react-chartjs-2";
+import { Chart, ArcElement } from "chart.js";
+import DashboardGoals from "../components/DashboardGoals";
+import { styled } from "@mui/material/styles";
 
 function Dashboard() {
   //need to register all elements using Chart.js - doughnut
   Chart.register(ArcElement);
- 
-  const DashboardLayoutRoot = styled('div')(({ theme }) => ({
-    display: 'flex',
-    flex: '1 1 auto',
-    maxWidth: '100%',
+
+  const DashboardLayoutRoot = styled("div")(({ theme }) => ({
+    display: "flex",
+    flex: "1 1 auto",
+    maxWidth: "100%",
     paddingTop: 64,
-    [theme.breakpoints.up('lg')]: {
-      paddingLeft: 280
-    }
+    [theme.breakpoints.up("lg")]: {
+      paddingLeft: 50,
+    },
+  }));
+
+  const DashboarddDisplay = styled("div")(({ theme }) => ({
+    display: "flex",
+    flex: "1 1 auto",
+    maxWidth: "100%",
+    paddingTop: 64,
+    [theme.breakpoints.up("lg")]: {
+      paddingLeft: 500,
+    },
   }));
 
   const theme = useTheme();
@@ -96,68 +106,64 @@ function Dashboard() {
   return (
     <div>
       <Navbar />
-      
+
       <Box
-      component="main"
-      sx={{
-        flexGrow: 1,
-        py: 8
-      }}
-    >
-      
-      <Container maxWidth={false}>
-      <DashboardLayoutRoot>
-      <Grid
-            item
-            lg={8}
-            md={12}
-            xl={9}
-            xs={12}
-          >
-      <Card sx={{ height: '100%' }} > 
-      <CardHeader title="Dashboard" />
-      <Divider />
-      <CardContent>
-        <Box
-          sx={{
-            height: 300,
-            position: "relative",
-          }}
-        >
-          <Doughnut data={data} options={options} />
-        </Box>
-        <Box
-          sx={{
-            display: "flex",
-            justifyContent: "center",
-            pt: 2,
-          }}
-        >
-          {genres.map(({ color, icon: Icon, title, value }) => (
-            <Box
-              key={title}
-              sx={{
-                p: 1,
-                textAlign: "center",
-              }}
-            >
-              <Icon color="action" />
-              <Typography color="textPrimary" variant="body1">
-                {title}
-              </Typography>
-              <Typography style={{ color }} variant="h4">
-                {value}%
-              </Typography>
-            </Box>
-          ))}
-        </Box>
-      </CardContent>
-      </Card>
-      </Grid>
-      </DashboardLayoutRoot>
-     <DashboardGoals /> 
-     
-      </Container>
+        component="main"
+        sx={{
+          flexGrow: 1,
+          py: 8,
+        }}
+      >
+        <Container maxWidth={false}>
+          <DashboardLayoutRoot>
+            <Grid item lg={8} md={12} xl={9} xs={12}>
+              <Card sx={{ height: "100%" }}>
+                <CardHeader title="Dashboard" />
+                <Divider />
+                <CardContent>
+                  <Box
+                    sx={{
+                      height: 300,
+                      position: "relative",
+                    }}
+                  >
+                    <Doughnut data={data} options={options} />
+                  </Box>
+                  <Box
+                    sx={{
+                      display: "flex",
+                      justifyContent: "center",
+                      pt: 2,
+                    }}
+                  >
+                    {genres.map(({ color, icon: Icon, title, value }) => (
+                      <Box
+                        key={title}
+                        sx={{
+                          p: 1,
+                          textAlign: "center",
+                        }}
+                      >
+                        <Icon color="action" />
+                        <Typography color="textPrimary" variant="body1">
+                          {title}
+                        </Typography>
+                        <Typography style={{ color }} variant="h4">
+                          {value}%
+                        </Typography>
+                      </Box>
+                    ))}
+                  </Box>
+                </CardContent>
+              </Card>
+            </Grid>
+          </DashboardLayoutRoot>
+
+        <DashboarddDisplay>
+           <DashboardGoals />
+        
+           </DashboarddDisplay>
+        </Container>
       </Box>
     </div>
   );

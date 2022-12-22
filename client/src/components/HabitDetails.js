@@ -3,15 +3,13 @@ import {
   Box,
   Card,
   CardContent,
-
-  Container,
-  Grid,
-  Divider,
+ Button,
+CardActions,
   Typography,
   IconButton,
   useTheme,
 } from "@mui/material";
-import FeedIcon from '@mui/icons-material/Feed';
+import FeedIcon from "@mui/icons-material/Feed";
 
 function HabitDetails({ habit }) {
   const theme = useTheme();
@@ -21,9 +19,7 @@ function HabitDetails({ habit }) {
       HabitDetail
       <Card
         sx={{
-          display: "flex",
-          flexDirection: "column",
-          height: "100%",
+          maxWidth: 345
         }}
       >
         <CardContent>
@@ -34,24 +30,28 @@ function HabitDetails({ habit }) {
               pb: 3,
             }}
           >
-            <IconButton> 
-            <FeedIcon />
+            <IconButton>
+              <FeedIcon />
             </IconButton>
-             </Box>
-            <Typography
-              align="center"
-              color="textPrimary"
-              gutterBottom
-              variant="h5"
-            >
-              {" "}
-              {habit.title}
-            </Typography>
-            <Typography align="center" color="textPrimary" variant="body1">
-              {habit.description}
-            </Typography>
-         
+          </Box>
+          <Typography
+            // align="center"
+            color="textPrimary"
+            gutterBottom
+            variant="h5"
+          >
+            {" "}
+            {habit.title}
+          </Typography>
+          <Typography color="textPrimary" variant="body1">
+            {habit.description}
+          </Typography>
         </CardContent>
+        <CardActions>
+        <Button size="small">Update</Button>
+        <Button size="small">Delete</Button>
+      </CardActions>
+      
       </Card>
     </div>
   );
