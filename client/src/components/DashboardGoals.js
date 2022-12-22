@@ -35,6 +35,13 @@ function DashboardGoals() {
     setHabits(updatedHabits);
   }
 
+function updateHabit(updatedHabit) {
+  const updatedHabits = habits.map((habit) =>{
+    return habit.id === updatedHabit.id ? updatedHabit : habit;
+  });
+  setHabits(updatedHabits);
+}
+
   return (
     <div>
       <Grid item lg={8} md={12} xl={9} xs={12}>
@@ -44,6 +51,7 @@ function DashboardGoals() {
               key={habit._id}
               habit={habit}
               deleteHabit={deleteHabit}
+              updateHabit={updateHabit}
             />
           ))}
         <HabitForm />

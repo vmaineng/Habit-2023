@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import {
   Box,
   Card,
@@ -11,8 +11,36 @@ CardActions,
 } from "@mui/material";
 import FeedIcon from "@mui/icons-material/Feed";
 
-function HabitDetails({ habit }) {
+
+function HabitDetails({ habit, deleteHabit, updateHabit }) {
+  const [updatedHabit, setUpdatedHabit] = useState(habit);
+
   const theme = useTheme();
+
+function handleDeleteHabit(id) {
+  fetch(`/api/habits/${id}`, {
+    method: 'DELETE',
+    headers: { Accept: 'application/json'},
+  }).then((r) => {
+    if (r.ok) {
+      deleteHabit(id);
+    }
+  });
+}
+
+function handleUpdateHabit(e) {
+  e.preventDefault();
+  fetch(`/api/habits/${habit.id}`, {
+    method: 'PATCH',
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ habit: updatedHabit }),
+  })
+    .then((r) => r.json())
+    .then((updatedHabit) => {
+      updateHabit(updatedHabit);
+})
+}
+
 
   return (
     <div>
@@ -49,7 +77,7 @@ function HabitDetails({ habit }) {
         </CardContent>
         <CardActions>
         <Button size="small">Update</Button>
-        <Button size="small">Delete</Button>
+        <button onClick={() => handleDeleteHabit(habit._id)}>Delete</button>
       </CardActions>
       
       </Card>
