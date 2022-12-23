@@ -55,7 +55,7 @@ function LoginForm() {
             value={password}
           />
        <br />
-          <Button type="submit">Log in</Button>
+          <Button size="small" variant="contained" type="submit">Log in</Button>
         </Box>
       </form>
       {error && error}

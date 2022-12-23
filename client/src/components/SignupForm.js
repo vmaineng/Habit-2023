@@ -3,7 +3,6 @@ import Container from '@mui/material/Container';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import { useNavigate } from 'react-router-dom';
-import Grid from '@mui/material/Grid';
 
 
 function SignupForm() {
@@ -59,22 +58,23 @@ if (response.ok) {
     <Box sx={{ mt: 4, mb: 5}}>
   
           
-    <label> First Name</label>
+    <label> First Name </label>
         <input type="text" onChange={(e) => setFirstName(e.target.value)} value={firstName} />  
         <br /> 
-        <label> Last Name</label>
+        <label> Last Name </label>
         <input type="text" onChange={(e) => setLastName(e.target.value)} value={lastName} />
         <br />  
-        <label> username</label>
+        <label> username </label>
         <input type="text" onChange={(e) => setUsername(e.target.value)} value={username} />  
-        <br />
-        <label>Password</label>
-        <input type="text" onChange={(e) => setPassword(e.target.value)} value={password} />  
         <br />
         <label>E-mail </label>
         <input type="text" onChange={(e) => setEmail(e.target.value)} value={email} />  
        <br />
-       <Button type="submit">Sign up</Button>
+        <label>Password </label>
+        <input type="text" onChange={(e) => setPassword(e.target.value)} value={password} />  
+        <br />
+      
+       <Button size="small" variant="contained" type="submit">Sign up</Button>
        
     </Box>
     

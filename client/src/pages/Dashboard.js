@@ -19,6 +19,7 @@ import { Doughnut } from "react-chartjs-2";
 import { Chart, ArcElement } from "chart.js";
 import DashboardGoals from "../components/DashboardGoals";
 import { styled } from "@mui/material/styles";
+import Footer from "../components/Footer";
 
 function Dashboard() {
   //need to register all elements using Chart.js - doughnut
@@ -157,14 +158,16 @@ function Dashboard() {
                 </CardContent>
               </Card>
             </Grid>
+            <DashboardGoals />
           </DashboardLayoutRoot>
 
-        <DashboarddDisplay>
-           <DashboardGoals />
+        {/* <DashboarddDisplay> */}
+         
         
-           </DashboarddDisplay>
+           {/* </DashboarddDisplay> */}
         </Container>
       </Box>
+      <Footer />
     </div>
   );
 }
