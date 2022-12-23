@@ -35,16 +35,6 @@ function Dashboard() {
     },
   }));
 
-  const DashboarddDisplay = styled("div")(({ theme }) => ({
-    display: "flex",
-    flex: "1 1 auto",
-    maxWidth: "100%",
-    paddingTop: 64,
-    [theme.breakpoints.up("lg")]: {
-      paddingLeft: 500,
-    },
-  }));
-
   const theme = useTheme();
 
   // creating dashboard results
@@ -158,13 +148,10 @@ function Dashboard() {
                 </CardContent>
               </Card>
             </Grid>
+            <Box sx={{ p:10 }}>
             <DashboardGoals />
+            </Box>
           </DashboardLayoutRoot>
-
-        {/* <DashboarddDisplay> */}
-         
-        
-           {/* </DashboarddDisplay> */}
         </Container>
       </Box>
       <Footer />

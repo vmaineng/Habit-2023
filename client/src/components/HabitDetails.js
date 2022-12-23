@@ -57,7 +57,7 @@ function HabitDetails({ habit, deleteHabit, updateHabit }) {
       HabitDetail
       <Card
         sx={{
-          maxWidth: 345,
+          maxWidth: 500,
         }}
       >
         <CardContent>
