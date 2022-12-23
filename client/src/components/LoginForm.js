@@ -1,8 +1,8 @@
 import { useState } from "react";
 import Box from "@mui/material/Box";
-// import Button from "@mui/material/Button";
+ import Button from "@mui/material/Button";
  import { useNavigate } from 'react-router-dom';
-// import { Field} from 'react-final-form';
+
 
 function LoginForm() {
   const [email, setEmail] = useState("");
@@ -41,21 +41,21 @@ function LoginForm() {
     <div>
       <form onSubmit={handleSubmit}>
         <Box sx={{ mt: 6 }}>
-          <label> Login</label>
+          <label> Username </label>
           <input
             type="text"
             onChange={(e) => setEmail(e.target.value)}
             value={email}
           />
-          <label>Password</label>
+          <br />
+          <label>Password </label>
           <input
             type="text"
             onChange={(e) => setPassword(e.target.value)}
             value={password}
           />
-          {/* <Field name="username" required size="large" />
-    <Field name="password" required size="large" /> */}
-          <button type="submit">Log in</button>
+       <br />
+          <Button type="submit">Log in</Button>
         </Box>
       </form>
       {error && error}
