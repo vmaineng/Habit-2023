@@ -7,14 +7,22 @@ import Typography from "@mui/material/Typography";
 import Grid from "@mui/material/Grid";
 import Note from "../assets/note.png";
 import Link from '@mui/material/Link';
-// import { useTheme } from '@mui/material/styles';
+import { useTheme } from '@mui/material/styles';
 
 function Landingpage() {
-  // let theme = useTheme();
+ let theme = useTheme();
+
+ const item = {
+  display: 'flex',
+  flexDirection: 'column',
+  alignItems: 'center',
+  px: 5,
+};
   
   return (
     <div>
       <Navbar />
+      
       <Container
         sx={{
           mt: 3,
@@ -53,50 +61,60 @@ function Landingpage() {
       </Container>
 
       {/* Values */}
-      <Container sx={{ mt: 10, mb: 15, display: "flex", position: "relative" }}>
-        <Grid container spacing={2}>
-          <Grid item xs={1} md={4}>
+      <Box
+      component="section"
+      sx={{ display: 'flex', overflow: 'hidden', bgcolor: 'secondary' }}
+    >
+      <Container sx={{ mt: 1, mb: 10, display: "flex", position: "relative" }}>
+        <Grid container spacing={5}>
+          <Grid item xs={12} md={4}>
+            <Box sx={item}>
             <Box
               component="img"
               src={Note}
-              alt="suitcase"
-              sx={{ height: 150 }}
+              alt="notepad"
+              sx={{ height: 55 }}
             />
-            <Typography variant="h6" sx={{ my: 3 }}>
+            <Typography variant="h6" sx={{ my: 5}}>
               Motivated
             </Typography>
             <Typography variant="h5">{"Track your habits, set goals, and stay motivated to reach them!"}</Typography>
+            </Box>
           </Grid>
-        </Grid>
-        <Grid container spacing={2}>
+
+       
           <Grid item xs={12} md={4}>
+          <Box sx={item}>
             <Box
               component="img"
               src={Note}
-              alt="suitcase"
-              sx={{ height: 150 }}
+              alt="notepad"
+              sx={{ height: 55 }}
             />
-            <Typography variant="h6" sx={{ my: 3 }}>
+            <Typography variant="h6" sx={{ my: 5 }}>
               Positivity
             </Typography>
             <Typography variant="h5">{"A simple way to build positive habits and break bad ones."}</Typography>
+            </Box>
           </Grid>
-        </Grid>
-        <Grid container spacing={2}>
+      
           <Grid item xs={12} md={4}>
+            <Box sx={item}>
             <Box
               component="img"
               src={Note}
               alt="suitcase"
-              sx={{ height: 150 }}
+              sx={{ height: 55 }}
             />
             <Typography variant="h6" sx={{ my: 3 }}>
               Empower
             </Typography>
             <Typography variant="h5">{"Create powerful habits and make your dreams come true!"}</Typography>
+            </Box>
           </Grid>
-        </Grid>
+       </Grid>
       </Container>
+      </Box>
 
       {/* Footer */}
       <Typography
@@ -129,6 +147,7 @@ function Landingpage() {
           </Grid></Grid></Grid></Grid>
                 </Container>
         </Typography>
+       
     </div>
   );
 }
