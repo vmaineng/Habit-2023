@@ -3,6 +3,8 @@ import Navbar from '../components/Navbar'
 import Typography from "@mui/material/Typography";
 import { Link } from "react-router-dom";
 import SignupForm from '../components/SignupForm';
+import Footer from "../components/Footer";
+import Box from '@mui/material/Box';
 
 function Signup() {
   return (
@@ -17,6 +19,9 @@ function Signup() {
           Log in here
         </Link>
       </Typography>
+      <Box sx={{ mt: 35}}>
+      <Footer />
+      </Box>
     </div>
   )
 }
