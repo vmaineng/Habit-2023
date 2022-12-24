@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import HabitDetails from "../components/HabitDetails";
-import HabitForm from "../components/HabitForm";
+// import HabitForm from "../components/HabitForm";
+import { Link } from "react-router-dom";
 import {
 Grid,
   useTheme,
@@ -47,7 +48,11 @@ function updateHabit(updatedHabit) {
               updateHabit={updateHabit}
             />
           ))}
-        <HabitForm />
+        {/* <HabitForm /> */}
+        <br />
+        <Link to="/new" align="center" underline="always">
+          Add new habit
+        </Link>
       </Grid>
     </div>
   );

@@ -5,6 +5,7 @@ import Landingpage from "./pages/Landingpage";
 import Dashboard from "./pages/Dashboard";
 import Signup from "./pages/Signup";
 import Login from "./pages/Login";
+import NewHabit from "./pages/NewHabit";
 
 function App() {
   // const theme = useTheme();
@@ -18,6 +19,7 @@ function App() {
           <Route path="/home" element={<Dashboard />} />
           <Route path="/signup" element={<Signup />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/new" element={<NewHabit />} />
         </Routes>
       </BrowserRouter>
     </div>
