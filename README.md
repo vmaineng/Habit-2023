@@ -1,5 +1,5 @@
-# Tiny-Task
->Full stack application for parents to discover activities for their children in their leisure time.
+# Habit Breaker
+>Full stack application to help users track their new habits and see a dashboard of their habits to help them attain their goals.
 
 ## Table of contents
 * [General info](#general-info)
@@ -16,16 +16,16 @@
 Users are able to:
 
 - can register, login, and logout
-- view all activities
-- favorite activities
-- delete activities
+- Add new habit
+- update new habit
+- see dashboard of habits tracked
 
-<div align="center">Welcome to Tiny-Task </div>
+<div align="center">Welcome to Habit Breaker </div>
 <br/>
 <div align="center">
 <kbd>
 Desktop view:
-<img width="750" alt="icon" src="https://user-images.githubusercontent.com/100221733/209723557-88f1d97a-4d76-469c-9fb5-f80e59c1d249.png">
+<img width="700" alt="icon" src="https://user-images.githubusercontent.com/100221733/209727878-5091d8d3-d1eb-462f-ae70-24a0c202c7d7.png">
 </kbd>
 </div>
 
@@ -33,7 +33,6 @@ Desktop view:
 [Click to view site] (https://tiny-task.vercel.app/)
 
 ## Project Video
-[Click to view site] (https://vimeo.com/748869588/2f2d5d8986)
 
 ## Technologies
 ### Backend Development 
