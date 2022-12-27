@@ -36,92 +36,99 @@ Desktop view:
 
 ## Technologies
 ### Backend Development 
-* Ruby on Rails
+* Node.js 
+* Express.js version 4.18.2
+* Mongoose version 6.8.0
+* JWT version 8.5.1
+* Bcrypt version 5.1.0
 
 ### Frontend Development 
 * JavaScript (ES6)
-* HTML5
-* CSS3
 * React.js version 18.2.0
 * React-Dom version 18.2.0
-* React-router-dom version 6.3.0
-* Chakra UI version 2.2.3
+* React-router-dom version 6.4.5
+* MaterialUI version 5.11.0
+* React-Chartjs-2 version 5.0.1
 
 ## Setup
 To render this project on your computer:
 1. Clone the GitHub repository locally to your computer
-2. Start the backend, type the command $rails server in the terminal line.
+2. Start the backend, type the command $npm run dev in the terminal line.
 3. Navigate to the client fodler. In the command line, type the following:
 $npm install and start. 
 
 
 ## Code Example
-## Ruby on Rails
+## Node.js/Express.js
 
-```ruby
-class FavoritedActivity < ApplicationRecord
-  belongs_to :user
-  belongs_to :activity
-  has_many :categories
+```Express
+//get a single habit
+const getHabit = async (req, res) => {
+  const { id } = req.params;
 
+  if (!mongoose.Types.ObjectId.isValid(id)) {
+    return res.status(404).json({ error: "Not found!" });
+  }
 
-  validates :user, uniqueness: { scope: :activity_id }
-end
+  const habit = await Habit.findById(id);
+  if (!habit) {
+    return res.status(404).json({ error: "Not Found" });
+  }
+
+  res.status(200).json(habit);
+};
 ```
 
 ## JavaScript/React.js
 
 ```js
-<Stack
-    direction={"column"}
-    spacing={3}
-    align={"center"}
-    alignSelf={"center"}
-   >
-           
-  {isLogin ? (
-      <>
-    <LoginForm onLogin={onLogin} />
-   <Text color={"black"} bg={"white"}>
-     Don't have an account? &nbsp;
-    <Button color="black" onClick={() => setIsLogin(false)}>
-       Sign Up
-     </Button>
-    </Text>
-      </>
-    ) : (
-    <>
-    <SignupForm onLogin={onLogin} />
+function HabitForm() {
+  const [title, setTitle] = useState("");
+  const [description, setDescription] = useState("");
+  const [error, setError] = useState(null);
 
-  <Text color={"black"} bg={"white"}>
-    Already have an account? &nbsp;
-      <Button color="black" onClick={() => setIsLogin(true)}>
-        Log In
-      </Button>
-    </Text>
-  </>
-   )}
+  const handleSubmit = async (e) => {
+    e.preventDefault();
 
-  </Stack>
+    const habit = { title, description };
+
+    const response = await fetch("/api/habits", {
+      method: "POST",
+      body: JSON.stringify(habit),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+    const json = await response.json();
+
+    if (!response.ok) {
+      setError(json.error);
+    }
+    if (response.ok) {
+      setTitle("");
+      setDescription("");
+      setError(null);
+      console.log("new habit added");
+    }
+  };
+
 ```
 
 ## Features
 
-* Full stack web application utiling JavaScript, React.js, SQLite, and Ruby on Rails.
-* Authorization and authentication completed with bcrypt.
-* Front-end styled with Chakra UI, Figma, and Canva.
+* Full stack web application utiling MERN stack: MongoDB, Express.js, React.js, and Node.js
+* Authorization and authentication completed with JWT and bcrypt.
+* Front-end and chart styled with MaterialUI and Chart.js
 * Users can sign up for an account through application.
-* Users can add profile information and profile image.
-* Users can favorite an activity, delete an activity, and complete an activity.
-
+* Users can add, update, and delete habits.
 
 ## Status
 
-Project is finished with option to expand functionality and DRY out code.
+Project still needs more styling and adding more features. 
 
 ## Inspiration
 
-The inspiration derived from collaborating with a group at Flatiron School to create list of activities for parents to complete with children.
+The inspiration derived from setting goals for the new year. As the new year falls upon us, best way to reach our goals is through the habits we set daily, weekly, and monthly.
 
 ## Contact
 Mai Vang
