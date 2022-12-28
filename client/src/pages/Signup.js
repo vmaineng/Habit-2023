@@ -1,29 +1,53 @@
-import React from 'react'
-import Navbar from '../components/Navbar'
-import Typography from "@mui/material/Typography";
+import React from "react";
 import { Link } from "react-router-dom";
-import SignupForm from '../components/SignupForm';
+import Navbar from "../components/Navbar";
+import SignupForm from "../components/SignupForm";
 import Footer from "../components/Footer";
-import Box from '@mui/material/Box';
+import Typography from "@mui/material/Typography";
+import Grid from "@mui/material/Grid";
+import Stack from "@mui/material/Stack";
+import Box from "@mui/material/Box";
 
 function Signup() {
   return (
-    <div><Navbar /> 
-     <Typography variant="h3" gutterBottom marked="center" align="center">
-        Sign up
-      </Typography>
-     <SignupForm />
-      <Typography variant="body2" align="center">
+    <div>
+      <Navbar />
+      <Grid container spacing={3}>
+        <Grid item xs={12}>
+          <Stack
+            direction="row"
+            justifyContent="space-between"
+            alignItems="baseline"
+            sx={{ mb: { xs: -0.5, sm: 0.5 } }}
+          >
+            <Typography
+              variant="h3"
+              // gutterBottom
+              // marked="center"
+              // align="center"
+            >
+              Sign up
+            </Typography>
+          </Stack>
+       
+      </Grid>
+      <Grid item xs={12}>
+        <SignupForm />
+      </Grid>
+      </Grid>
+      <Typography component={Link} to="/login" variant="body1" sx={{ textDecoration: 'none' }} color="primary">
         {"Already a member? "}
-        <Link to="/login" align="center" underline="always">
+
+        {/* <Link to="/login" align="center" underline="always">
           Log in here
-        </Link>
+        </Link> */}
       </Typography>
-      <Box sx={{ mt: 35}}>
-      <Footer />
+
+      <Box sx={{ mt: 35 }}>
+        <Footer />
       </Box>
     </div>
-  )
+  );
 }
 
-export default Signup
+export default Signup;
