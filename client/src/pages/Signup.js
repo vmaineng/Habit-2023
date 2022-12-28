@@ -12,6 +12,7 @@ function Signup() {
   return (
     <div>
       <Navbar />
+      <Box sx={{ p: { xs: 5, sm: 5, md: 5, xl: 10 } }}>
       <Grid container spacing={3}>
         <Grid item xs={12}>
           <Stack
@@ -31,6 +32,7 @@ function Signup() {
           </Stack>
        
       </Grid>
+      
       <Grid item xs={12}>
         <SignupForm />
       </Grid>
@@ -45,6 +47,7 @@ function Signup() {
 
       <Box sx={{ mt: 35 }}>
         <Footer />
+      </Box>
       </Box>
     </div>
   );
