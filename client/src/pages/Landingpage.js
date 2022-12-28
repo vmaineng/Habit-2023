@@ -6,6 +6,7 @@ import Purple from "../assets/purple.png";
 import Typography from "@mui/material/Typography";
 import Grid from "@mui/material/Grid";
 import Note from "../assets/note.png";
+import Button from "@mui/material/Button";
 
 import { useTheme } from "@mui/material/styles";
 import Footer from "../components/Footer";
@@ -125,6 +126,45 @@ function Landingpage() {
           </Grid>
         </Container>
       </Box>
+
+
+{/* Receive offers */}
+<Container component="section" sx={{ mt: 8, display: 'flex' }}>
+     
+        <Grid item xs={12} md={6} sx={{ display: { md: 'block', xs: 'none' }, position: 'relative' }}>
+          <Box
+            sx={{
+              display: 'flex',
+              justifyContent: 'center',
+              bgcolor: 'cyan',
+              py: 8,
+              px: 3,
+            }}
+          >
+            <Box sx={{ maxWidth: 400 }}>
+              <Typography variant="h2" component="h2" gutterBottom>
+                Receive offers
+              </Typography>
+              <Typography variant="h5">
+                Taste the holidays of the everyday close to home.
+              </Typography>
+            <input type="text" 
+            placholder="Your email" 
+            /> 
+            <br />
+              <Button
+                type="submit"
+                color="primary"
+                variant="contained"
+                sx={{ width: '100%' }}
+              >
+                Keep me updated
+              </Button>
+            </Box>
+          </Box>
+        
+</Grid>
+</Container>
 
       <Footer />
     </div>
