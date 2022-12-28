@@ -4,10 +4,10 @@ import Container from "@mui/material/Container";
 import Box from "@mui/material/Box";
 import Purple from "../assets/purple.png";
 import Typography from "@mui/material/Typography";
+import Button from "@mui/material/Button";
 import Grid from "@mui/material/Grid";
 import Note from "../assets/note.png";
-import Button from "@mui/material/Button";
-
+import Goal from "../assets/goal.png";
 import { useTheme } from "@mui/material/styles";
 import Footer from "../components/Footer";
 
@@ -169,29 +169,19 @@ function Landingpage() {
           md={6}
           sx={{ display: { md: 'block', xs: 'none' }, position: 'relative' }}
         >
-          <Box
-            sx={{
-              position: 'absolute',
-              top: -67,
-              left: -67,
-              right: 0,
-              bottom: 0,
-              width: '100%',
-              background: 'url(/static/themes/onepirate/productCTAImageDots.png)',
-            }}
-          />
+        
           <Box
             component="img"
-            src="https://images.unsplash.com/photo-1527853787696-f7be74f2e39a?auto=format&fit=crop&w=750"
-            alt="call to action"
+            src={Goal}
+            alt="goal"
             sx={{
               position: 'absolute',
               top: -28,
               left: -28,
               right: 0,
               bottom: 0,
-              width: '100%',
-              maxWidth: 600,
+              width: '300%',
+              maxWidth: 700,
             }}
           />
         </Grid>
