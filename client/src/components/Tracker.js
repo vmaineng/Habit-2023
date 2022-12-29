@@ -1,6 +1,7 @@
 import React from 'react'
 import { Grid, Typography } from '@mui/material';
 
+
 function Tracker() {
   return (
     <div>
@@ -10,7 +11,7 @@ function Tracker() {
                 <Typography variant="h5">Dashboard</Typography>
             </Grid>
             <Grid item xs={12} sm={6} md={4} lg={3}>
-                <Typography  variant="h5">Dashboard</Typography>
+                {/* <HabitDetails title="New page" variant="h5" /> */}
             </Grid>
             <Grid item xs={12} sm={6} md={4} lg={3}>
                 <Typography  variant="h5">Dashboard</Typography>
