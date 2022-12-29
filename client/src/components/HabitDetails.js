@@ -8,14 +8,17 @@ import {
   Typography,
   IconButton,
   useTheme,
+  FormControlLabel,
+  Checkbox,
+  Stack,
 } from "@mui/material";
 import FeedIcon from "@mui/icons-material/Feed";
+import { useForm, Controller } from "react-hook-form";
 
 function HabitDetails({ habit, deleteHabit, updateHabit }) {
   const [updatedHabit, setUpdatedHabit] = useState({
     title: habit.title,
-    description: habit.description
-
+    description: habit.description,
   });
 
   const theme = useTheme();
@@ -37,7 +40,7 @@ function HabitDetails({ habit, deleteHabit, updateHabit }) {
     fetch(`/api/habits/${habit._id}`, {
       method: "PATCH",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify( updatedHabit),
+      body: JSON.stringify(updatedHabit),
     })
       .then((r) => r.json())
       .then((updatedHabits) => {
@@ -49,8 +52,14 @@ function HabitDetails({ habit, deleteHabit, updateHabit }) {
   //   setUpdatedHabit((updatedHabit) => ({
   //     ...updatedHabit,
   //     [e.target.des
-  //   })) 
+  //   }))
   // }
+
+  const { control } = useForm({
+    defaultValues: {
+      taskCompleted: ["2"],
+    },
+  });
 
   return (
     <div>
@@ -86,17 +95,34 @@ function HabitDetails({ habit, deleteHabit, updateHabit }) {
           </Typography>
         </CardContent>
         <CardActions>
+          <Stack
+            direction="column"
+            sx={{
+              px: 12,
+              py: 0.75,
+            }}
+          >
+            <FormControlLabel
+              control={<Checkbox />}
+              label={habit.title}
+              sx={{ flexGrow: 1, m: 0 }}
+            />
+          
+
           <form onSubmit={handleUpdateHabit}>
             <input
               type="text"
-               name="updatedHabit"
+              name="updatedHabit"
               placeholder="update description"
               value={updatedHabit.description}
               onChange={(e) => setUpdatedHabit(e.target.value)}
             />
             <Button size="small">Update</Button>
+            <Button onClick={() => handleDeleteHabit(habit._id)}>Delete</Button>
           </form>
-          <Button onClick={() => handleDeleteHabit(habit._id)}>Delete</Button>
+          </Stack>
+          {/*     
+          <Button onClick={() => handleDeleteHabit(habit._id)}>Delete</Button> */}
         </CardActions>
       </Card>
     </div>
