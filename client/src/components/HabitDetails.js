@@ -1,19 +1,36 @@
 import React, { useState } from "react";
+// import {
+//   Box,
+//   Card,
+//   CardContent,
+//   Button,
+//   CardActions,
+//   Typography,
+//   IconButton,
+//   useTheme,
+//   FormControlLabel,
+//   Checkbox,
+//   Stack,
+// } from "@mui/material";
+
 import {
   Box,
-  Card,
-  CardContent,
   Button,
-  CardActions,
-  Typography,
-  IconButton,
+  Card,
+  CardHeader,
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableRow,
+  TableSortLabel,
   useTheme,
-  FormControlLabel,
-  Checkbox,
-  Stack,
+  Tooltip,
 } from "@mui/material";
-import FeedIcon from "@mui/icons-material/Feed";
-import { useForm, Controller } from "react-hook-form";
+import ArrowRightIcon from "@mui/icons-material/ArrowRight";
+
+// import FeedIcon from "@mui/icons-material/Feed";
+// import { useForm, Controller } from "react-hook-form";
 
 function HabitDetails({ habit, deleteHabit, updateHabit }) {
   const [updatedHabit, setUpdatedHabit] = useState({
@@ -55,76 +72,55 @@ function HabitDetails({ habit, deleteHabit, updateHabit }) {
   //   }))
   // }
 
-  const { control } = useForm({
-    defaultValues: {
-      taskCompleted: ["2"],
-    },
-  });
-
   return (
     <div>
       HabitDetail
-      <Card
+      <CardHeader title="Habits" />
+      <Box sx={{ minWidth: 800 }}>
+        <Table>
+          <TableHead>
+            <TableRow>
+              <TableCell>Order Ref</TableCell>
+              <TableCell>Customer</TableCell>
+              <TableCell sortDirection="desc">
+                <Tooltip enterDelay={300} title="Sort">
+                  <TableSortLabel active direction="desc">
+                    Date
+                  </TableSortLabel>
+                </Tooltip>
+              </TableCell>
+              <TableCell>Status</TableCell>
+            </TableRow>
+          </TableHead>
+
+          <TableBody>
+            <TableRow hover key={habit.id}>
+              <TableCell>{habit.title}</TableCell>
+              <TableCell>{habit.description}</TableCell>
+              {/* <TableCell>
+                  {format(order.createdAt, 'dd/MM/yyyy')}
+                </TableCell> */}
+            </TableRow>
+          </TableBody>
+        </Table>
+      </Box>
+   
+      <Box
         sx={{
-          maxWidth: 500,
+          display: "flex",
+          justifyContent: "flex-end",
+          p: 2,
         }}
       >
-        <CardContent>
-          <Box
-            sx={{
-              display: "flex",
-              justifyContent: "center",
-              pb: 3,
-            }}
-          >
-            <IconButton>
-              <FeedIcon />
-            </IconButton>
-          </Box>
-          <Typography
-            // align="center"
-            color="textPrimary"
-            gutterBottom
-            variant="h5"
-          >
-            {" "}
-            {habit.title}
-          </Typography>
-          <Typography color="textPrimary" variant="body1">
-            {habit.description}
-          </Typography>
-        </CardContent>
-        <CardActions>
-          <Stack
-            direction="column"
-            sx={{
-              px: 12,
-              py: 0.75,
-            }}
-          >
-            <FormControlLabel
-              control={<Checkbox />}
-              label={habit.title}
-              sx={{ flexGrow: 1, m: 0 }}
-            />
-          
-
-          <form onSubmit={handleUpdateHabit}>
-            <input
-              type="text"
-              name="updatedHabit"
-              placeholder="update description"
-              value={updatedHabit.description}
-              onChange={(e) => setUpdatedHabit(e.target.value)}
-            />
-            <Button size="small">Update</Button>
-            <Button onClick={() => handleDeleteHabit(habit._id)}>Delete</Button>
-          </form>
-          </Stack>
-          {/*     
-          <Button onClick={() => handleDeleteHabit(habit._id)}>Delete</Button> */}
-        </CardActions>
-      </Card>
+        <Button
+          color="primary"
+          endIcon={<ArrowRightIcon fontSize="small" />}
+          size="small"
+          variant="text"
+        >
+          View all
+        </Button>
+      </Box>
     </div>
   );
 }
