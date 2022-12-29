@@ -39,17 +39,6 @@ function Dashboard() {
   }));
 
 
-  const StyledIcon = styled('div')(({ theme }) => ({
-    margin: 'auto',
-    display: 'flex',
-    borderRadius: '50%',
-    alignItems: 'center',
-    width: theme.spacing(8),
-    height: theme.spacing(8),
-    justifyContent: 'center',
-    marginBottom: theme.spacing(3),
-  }));
-
   const theme = useTheme();
 
   // creating dashboard results
@@ -115,24 +104,21 @@ function Dashboard() {
 
       <Card
       sx={{
-        py: 5,
-        boxShadow: 0,
+        py: 3,
+        boxShadow: 5,
         textAlign: 'center',
-        color: (theme) => theme.palette.darker,
-        bgcolor: (theme) => theme.palette.lighter,
+        color: "navy"
       }}
     > 
-My Weekly Goals
+
+
+    <Grid item xs={9}>
+        <AddToQueueIcon width={100} height={100} />
+        </Grid>
+  
+      <Typography variant="h3">My Weekly Goals</Typography>
+
     </Card>
-
-    <StyledIcon
-        sx={{
-          color: "navy"
-        }}
-      >
-        <IconButton icon={AddToQueueIcon} width={24} height={24} />
-      </StyledIcon>
-
 
       <Box
         component="main"
