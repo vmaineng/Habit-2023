@@ -20,6 +20,7 @@ import { Doughnut } from "react-chartjs-2";
 import { Chart, ArcElement } from "chart.js";
 import DashboardGoals from "../components/DashboardGoals";
 import { alpha, styled } from "@mui/material/styles";
+import Tracker from "../components/Tracker";
 import Footer from "../components/Footer";
 import AddToQueueIcon from '@mui/icons-material/AddToQueue';
 
@@ -128,6 +129,7 @@ function Dashboard() {
         }}
       >
         <Container maxWidth={false}>
+        <Tracker />
           <DashboardLayoutRoot>
             <Grid item lg={8} md={12} xl={9} xs={12}>
               <Card sx={{ height: "100%" }}>
