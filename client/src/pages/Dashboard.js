@@ -10,6 +10,7 @@ import {
   Grid,
   Divider,
   Typography,
+IconButton,
   useTheme,
 } from "@mui/material";
 import FavoriteIcon from "@mui/icons-material/Favorite";
@@ -18,8 +19,10 @@ import DirectionsRunIcon from "@mui/icons-material/DirectionsRun";
 import { Doughnut } from "react-chartjs-2";
 import { Chart, ArcElement } from "chart.js";
 import DashboardGoals from "../components/DashboardGoals";
-import { styled } from "@mui/material/styles";
+import { alpha, styled } from "@mui/material/styles";
 import Footer from "../components/Footer";
+import AddToQueueIcon from '@mui/icons-material/AddToQueue';
+
 
 function Dashboard() {
   //need to register all elements using Chart.js - doughnut
@@ -33,6 +36,18 @@ function Dashboard() {
     [theme.breakpoints.up("lg")]: {
       paddingLeft: 50,
     },
+  }));
+
+
+  const StyledIcon = styled('div')(({ theme }) => ({
+    margin: 'auto',
+    display: 'flex',
+    borderRadius: '50%',
+    alignItems: 'center',
+    width: theme.spacing(8),
+    height: theme.spacing(8),
+    justifyContent: 'center',
+    marginBottom: theme.spacing(3),
   }));
 
   const theme = useTheme();
@@ -97,6 +112,27 @@ function Dashboard() {
   return (
     <div>
       <Navbar />
+
+      <Card
+      sx={{
+        py: 5,
+        boxShadow: 0,
+        textAlign: 'center',
+        color: (theme) => theme.palette.darker,
+        bgcolor: (theme) => theme.palette.lighter,
+      }}
+    > 
+My Weekly Goals
+    </Card>
+
+    <StyledIcon
+        sx={{
+          color: "navy"
+        }}
+      >
+        <IconButton icon={AddToQueueIcon} width={24} height={24} />
+      </StyledIcon>
+
 
       <Box
         component="main"
