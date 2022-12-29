@@ -100,8 +100,10 @@ function HabitDetails({ habit, deleteHabit, updateHabit }) {
               {/* <TableCell>
                   {format(order.createdAt, 'dd/MM/yyyy')}
                 </TableCell> */}
+                 <Button onClick={() => handleDeleteHabit(habit._id)}>Delete</Button> 
             </TableRow>
           </TableBody>
+          
         </Table>
       </Box>
    
@@ -120,6 +122,8 @@ function HabitDetails({ habit, deleteHabit, updateHabit }) {
         >
           View all
         </Button>
+
+     
       </Box>
     </div>
   );
