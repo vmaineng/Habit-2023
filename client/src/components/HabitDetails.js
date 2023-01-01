@@ -75,7 +75,7 @@ function HabitDetails({ habit, deleteHabit, updateHabit }) {
   return (
     <div>
       HabitDetail
-      <Card>
+      <Card style={{backgroundColor: "#EDE9FF", border: "1px solid navy"}} >
       <CardHeader title="Habits" />
       <Box sx={{ minWidth: 800 }}>
         <Table>

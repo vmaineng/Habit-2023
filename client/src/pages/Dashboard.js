@@ -108,7 +108,8 @@ function Dashboard() {
         py: 3,
         boxShadow: 5,
         textAlign: 'center',
-        color: "navy"
+        color: "navy",
+        bgcolor: "#EDE9FF", border: "1px solid navy"
       }}
     > 
 
@@ -136,7 +137,7 @@ function Dashboard() {
         {/* layout for doughnut and habits */}
           <DashboardLayoutRoot>
             <Grid item lg={8} md={12} xl={9} xs={12}>
-              <Card >
+              <Card style={{backgroundColor: "#EDE9FF", border: "1px solid navy"}}  >
                 <CardHeader title="Categories" />
                 <Divider />
                 <CardContent>
