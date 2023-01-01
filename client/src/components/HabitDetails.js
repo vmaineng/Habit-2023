@@ -75,6 +75,7 @@ function HabitDetails({ habit, deleteHabit, updateHabit }) {
   return (
     <div>
       HabitDetail
+      <Card>
       <CardHeader title="Habits" />
       <Box sx={{ minWidth: 800 }}>
         <Table>
@@ -122,9 +123,9 @@ function HabitDetails({ habit, deleteHabit, updateHabit }) {
         >
           View all
         </Button>
-
      
       </Box>
+      </Card>
     </div>
   );
 }
