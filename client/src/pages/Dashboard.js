@@ -1,5 +1,8 @@
 import React from "react";
 import Navbar from "../components/Navbar";
+import DashboardGoals from "../components/DashboardGoals";
+import Tracker from "../components/Tracker";
+import Footer from "../components/Footer";
 
 import {
   Box,
@@ -18,10 +21,7 @@ import PaidIcon from "@mui/icons-material/Paid";
 import DirectionsRunIcon from "@mui/icons-material/DirectionsRun";
 import { Doughnut } from "react-chartjs-2";
 import { Chart, ArcElement } from "chart.js";
-import DashboardGoals from "../components/DashboardGoals";
 import { styled } from "@mui/material/styles";
-import Tracker from "../components/Tracker";
-import Footer from "../components/Footer";
 import AddToQueueIcon from '@mui/icons-material/AddToQueue';
 
 

@@ -1,6 +1,20 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
+import {
+  Box,
+  Card,
+  CardContent,
+  CardHeader,
+  Button,
+  Grid,
+  Divider,
+  Typography,
+  TextField,
+  useTheme,
+} from "@mui/material";
+import AddToQueueIcon from "@mui/icons-material/AddToQueue";
+
 function HabitForm() {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
@@ -35,21 +49,80 @@ function HabitForm() {
 
   return (
     <div>
+      {/* <Card
+      sx={{
+        py: 3,
+        boxShadow: 5,
+        textAlign: 'center',
+        color: "navy",
+        bgcolor: "#EDE9FF", border: "1px solid navy"
+      }}
+    > 
+
+
+    <Grid item xs={9}>
+        <AddToQueueIcon width={100} height={100} />
+        </Grid>
+  
+      <Typography variant="h3">Add new habit</Typography>
+
+    </Card> */}
+
       <form onSubmit={handleSubmit}>
-        <h3>Add new Habit</h3>
-        <label>Habit title:</label>
-        <input
-          type="text"
-          onChange={(e) => setTitle(e.target.value)}
-          value={title}
-        />
-        <label>Habit Description: </label>
-        <input
-          type="text"
-          onChange={(e) => setDescription(e.target.value)}
-          value={description}
-        />
-        <button type="submit">Add new habit</button>
+        <Card
+          sx={{
+            mt: 5,
+            color: "navy",
+            bgcolor: "#EDE9FF",
+            border: "1px solid navy",
+          }}
+        >
+          <CardHeader
+            subheader="The information can be edited"
+            title="Add a new habit"
+          />
+          <Divider />
+          <CardContent>
+            <Grid container spacing={3}>
+              <Grid item md={6} xs={12}>
+                <TextField
+                  fullWidth
+                  helperText="Please specify the habit title"
+                  label="Habit title"
+                  name="title"
+                  onChange={(e) => setTitle(e.target.value)}
+                  required
+                  value={title}
+                  variant="outlined"
+                />
+              </Grid>
+              <Grid item md={6} xs={12}>
+                <TextField
+                  fullWidth
+                  helperText="Please specify the description"
+                  label="Habit description"
+                  name="description"
+                  onChange={(e) => setDescription(e.target.value)}
+                  required
+                  value={description}
+                  variant="outlined"
+                />
+              </Grid>
+            </Grid>
+          </CardContent>
+          <Divider />
+          <Box
+            sx={{
+              display: "flex",
+              justifyContent: "flex-end",
+              p: 2,
+            }}
+          >
+            <Button color="primary" variant="contained" type="submit">
+              Add new habit
+            </Button>
+          </Box>
+        </Card>
         {error && error}
       </form>
     </div>

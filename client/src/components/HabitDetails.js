@@ -34,8 +34,7 @@ import ArrowRightIcon from "@mui/icons-material/ArrowRight";
 
 function HabitDetails({ habit, deleteHabit, updateHabit }) {
   const [updatedHabit, setUpdatedHabit] = useState({
-    title: habit.title,
-    description: habit.description,
+    description: habit.description
   });
 
   const theme = useTheme();
@@ -54,15 +53,16 @@ function HabitDetails({ habit, deleteHabit, updateHabit }) {
   function handleUpdateHabit(e) {
     e.preventDefault();
 
-    fetch(`/api/habits/${habit._id}`, {
+    fetch(`/api/habits/${habit.id}`, {
       method: "PATCH",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(updatedHabit),
+      body: JSON.stringify({ description: e.target.updatedHabit }),
     })
       .then((r) => r.json())
-      .then((updatedHabits) => {
-        updateHabit(updatedHabits);
-      });
+      .then((updatedHabit) => {
+        updateHabit(updatedHabit);
+      })
+      .catch((err) => console.log('error:', err));
   }
 
   // function handleHabitChange(e) {
@@ -93,21 +93,23 @@ function HabitDetails({ habit, deleteHabit, updateHabit }) {
               <TableCell>Status</TableCell>
             </TableRow>
           </TableHead>
-
+          
           <TableBody>
             <TableRow hover key={habit.id}>
               <TableCell>{habit.title}</TableCell>
               <TableCell>{habit.description}</TableCell>
               {/* <TableCell>
-                  {format(order.createdAt, 'dd/MM/yyyy')}
+                  {format(order.
+                    createdAt, 'dd/MM/yyyy')}
                 </TableCell> */}
-                 <Button onClick={() => handleDeleteHabit(habit._id)}>Delete</Button> 
+                 
             </TableRow>
+            
           </TableBody>
           
         </Table>
       </Box>
-   
+     
       <Box
         sx={{
           display: "flex",
@@ -115,16 +117,29 @@ function HabitDetails({ habit, deleteHabit, updateHabit }) {
           p: 2,
         }}
       >
-        <Button
+        {/* <Button
           color="primary"
           endIcon={<ArrowRightIcon fontSize="small" />}
           size="small"
           variant="text"
         >
           View all
-        </Button>
-     
+        </Button> */}
+
+        {/* //comeback to fix update */}
+        <form onSubmit={handleUpdateHabit}>
+            <input
+              type="text"
+              name="updatedHabit.description"
+              placeholder="update description"
+              value={updatedHabit.description}
+              onChange={(e) => setUpdatedHabit(e.target.value)}
+            />
+            <Button size="small">Update</Button>
+          </form>
+     <Button onClick={() => handleDeleteHabit(habit._id)}>Delete</Button> 
       </Box>
+      
       </Card>
     </div>
   );

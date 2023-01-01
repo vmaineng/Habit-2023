@@ -11,6 +11,7 @@ function DashboardGoals() {
   const theme = useTheme();
 
   const [habits, setHabits] = useState(null);
+//state was set to null prior to []; trying []
 
   useEffect(() => {
     const fetchHabits = async () => {
@@ -30,7 +31,7 @@ function DashboardGoals() {
   }
 
 function updateHabit(updatedHabit) {
-  const updatedHabits = habits.map((habit) =>{
+  const updatedHabits = habits.map((habit) => {
     return habit.id === updatedHabit.id ? updatedHabit : habit;
   });
   setHabits(updatedHabits);

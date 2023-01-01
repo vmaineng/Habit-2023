@@ -59,8 +59,8 @@ const updateHabit = async (req, res) => {
   if (!mongoose.Types.ObjectId.isValid(id)) {
     return res.status(404).json({ error: "Not found!" });
   }
-
-  const habit = await Habit.findOneAndUpdate(
+ // const habit = await Habit.findOneAndUpdate( - old sql method; trying new one
+  const habit = await Habit.findByIdAndUpdate(
     { _id: id },
     {
       ...req.body,
