@@ -2,7 +2,7 @@ import React from "react";
 
 import Container from "@mui/material/Container";
 import Box from "@mui/material/Box";
-
+import Divider from '@mui/material/Divider';
 import Typography from "@mui/material/Typography";
 import Grid from "@mui/material/Grid";
 import Link from "@mui/material/Link";
@@ -11,8 +11,9 @@ function Footer() {
   return (
     <div>
       {/* Footer */}
+      <Divider />
       <Typography component="footer" sx={{ display: "flex", bgcolor: "lilac" }}>
-        <Container sx={{ my: 8, display: "flex" }}>
+        <Container sx={{ my: 2, display: "flex" }}>
           <Grid container spacing={5}>
             <Grid item xs={6} sm={4} md={3}>
               <Grid

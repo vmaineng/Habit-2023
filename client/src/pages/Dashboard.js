@@ -136,8 +136,8 @@ function Dashboard() {
         {/* layout for doughnut and habits */}
           <DashboardLayoutRoot>
             <Grid item lg={8} md={12} xl={9} xs={12}>
-              <Card sx={{ height: "100%" }}>
-                <CardHeader title="Dashboard" />
+              <Card >
+                <CardHeader title="Categories" />
                 <Divider />
                 <CardContent>
                   <Box
@@ -159,7 +159,7 @@ function Dashboard() {
                       <Box
                         key={title}
                         sx={{
-                          p: 1,
+                          p: 2,
                           textAlign: "center",
                         }}
                       >
@@ -176,7 +176,7 @@ function Dashboard() {
                 </CardContent>
               </Card>
             </Grid>
-            <Box sx={{ p:10 }}>
+            <Box sx={{ p:10, mt: -13}}>
             <DashboardGoals />
             </Box>
           </DashboardLayoutRoot>
