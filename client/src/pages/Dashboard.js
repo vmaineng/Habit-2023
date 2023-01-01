@@ -35,7 +35,7 @@ function Dashboard() {
     maxWidth: "100%",
     paddingTop: 64,
     [theme.breakpoints.up("lg")]: {
-      paddingLeft: 50,
+      paddingLeft: 100,
     },
   }));
 
@@ -126,7 +126,7 @@ function Dashboard() {
         component="main"
         sx={{
           flexGrow: 1,
-          py: 8,
+          py: 10,
         }}
       >
         <Container maxWidth={false}>
@@ -177,7 +177,7 @@ function Dashboard() {
                 </CardContent>
               </Card>
             </Grid>
-            <Box sx={{ p:10, mt: -13}}>
+            <Box sx={{ p:15, mt: -13}}>
             <DashboardGoals />
             </Box>
           </DashboardLayoutRoot>

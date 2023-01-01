@@ -72,9 +72,11 @@ function HabitForm() {
         <Card
           sx={{
             mt: 5,
+            marginLeft: "10%",
             color: "navy",
             bgcolor: "#EDE9FF",
             border: "1px solid navy",
+            width: "75%",
           }}
         >
           <CardHeader
