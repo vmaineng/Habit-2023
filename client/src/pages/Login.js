@@ -11,9 +11,6 @@ function Login() {
     <div>
       <Navbar />
 
-      <Typography variant="h3" gutterBottom marked="center" align="center">
-        Log In
-      </Typography>
       <LoginForm />
       <Typography variant="body2" align="center">
         {"Not a member yet? "}

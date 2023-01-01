@@ -13,7 +13,7 @@ import {
   TextField,
   useTheme,
 } from "@mui/material";
-import AddToQueueIcon from "@mui/icons-material/AddToQueue";
+
 
 function HabitForm() {
   const [title, setTitle] = useState("");
@@ -49,25 +49,7 @@ function HabitForm() {
 
   return (
     <div>
-      {/* <Card
-      sx={{
-        py: 3,
-        boxShadow: 5,
-        textAlign: 'center',
-        color: "navy",
-        bgcolor: "#EDE9FF", border: "1px solid navy"
-      }}
-    > 
-
-
-    <Grid item xs={9}>
-        <AddToQueueIcon width={100} height={100} />
-        </Grid>
-  
-      <Typography variant="h3">Add new habit</Typography>
-
-    </Card> */}
-
+      
       <form onSubmit={handleSubmit}>
         <Card
           sx={{

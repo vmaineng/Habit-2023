@@ -1,7 +1,19 @@
 import { useState } from "react";
-import Box from "@mui/material/Box";
- import Button from "@mui/material/Button";
  import { useNavigate } from 'react-router-dom';
+
+
+ import {
+  Box,
+  Card,
+  CardContent,
+  CardHeader,
+  Button,
+  Grid,
+  Divider,
+  Typography,
+  TextField,
+  useTheme,
+} from "@mui/material";
 
 
 function LoginForm() {
@@ -40,23 +52,63 @@ function LoginForm() {
   return (
     <div>
       <form onSubmit={handleSubmit}>
-        <Box sx={{ mt: 6 }}>
-          <label> Username </label>
-          <input
-            type="text"
-            onChange={(e) => setEmail(e.target.value)}
-            value={email}
+      <Card
+          sx={{
+            mt: 5,
+            marginLeft: "10%",
+            color: "navy",
+            bgcolor: "#EDE9FF",
+            border: "1px solid navy",
+            width: "75%",
+          }}
+        >
+          <CardHeader
+            subheader="Welcome back! :)"
+            title="Login"
           />
-          <br />
-          <label>Password </label>
-          <input
-            type="text"
-            onChange={(e) => setPassword(e.target.value)}
-            value={password}
-          />
-       <br />
-          <Button size="small" variant="contained" type="submit">Log in</Button>
-        </Box>
+          <Divider />
+          <CardContent>
+            <Grid container spacing={3}>
+              <Grid item md={6} xs={12}>
+                <TextField
+                  fullWidth
+                  // helperText="Please specify the habit title"
+                  label="Username"
+                  name="username"
+                  onChange={(e) => setEmail(e.target.value)}
+                  required
+                  value={email}
+                  variant="outlined"
+                />
+              </Grid>
+              <Grid item md={6} xs={12}>
+                <TextField
+                  fullWidth
+                  // helperText="Please specify the description"
+                  label="Password"
+                  name="password"
+                  onChange={(e) => setPassword(e.target.value)}
+                  required
+                  value={password}
+                  variant="outlined"
+                />
+              </Grid>
+            </Grid>
+          </CardContent>
+          <Divider />
+          <Box
+            sx={{
+              display: "flex",
+              justifyContent: "flex-end",
+              p: 2,
+            }}
+          >
+            <Button color="primary" variant="contained" type="submit">
+             Log in
+            </Button>
+          </Box>
+        </Card>
+       
       </form>
       {error && error}
     </div>

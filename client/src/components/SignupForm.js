@@ -7,6 +7,12 @@ import {
   Container,
   Stack,
   Typography,
+  Card,
+  CardContent,
+  CardHeader,
+  Grid,
+  Divider,
+  TextField,
 } from "@mui/material";
 
 import { useNavigate } from "react-router-dom";
@@ -65,24 +71,100 @@ function SignupForm() {
         >
           <Container maxWidth="sm">
         <form onSubmit={handleSubmit}>
-    <Box sx={{ mt: 4, mb: 5}}>
-    <label> First Name </label>
-        <input type="text" onChange={(e) => setFirstName(e.target.value)} value={firstName} />
-        <br />
-        <label> Last Name </label>
-        <input type="text" onChange={(e) => setLastName(e.target.value)} value={lastName} />
-        <br />
-        <label> username </label>
-        <input type="text" onChange={(e) => setUsername(e.target.value)} value={username} />
-        <br />
-        <label>E-mail </label>
-        <input type="text" onChange={(e) => setEmail(e.target.value)} value={email} />
-       <br />
-        <label>Password </label>
-        <input type="text" onChange={(e) => setPassword(e.target.value)} value={password} />
-        <br />
-       <Button size="small" variant="contained" type="submit">Sign up</Button>
-    </Box>
+        <Card
+          sx={{
+            mt: 5,
+            marginLeft: "10%",
+            color: "navy",
+            bgcolor: "#EDE9FF",
+            border: "1px solid navy",
+            display: "relative",
+            width: "75%",
+          }}
+        >
+          <CardHeader
+            subheader="I'm excited you're here today!"
+            title="Sign up"
+          />
+          <Divider />
+          <CardContent>
+            <Grid container spacing={3}>
+              <Grid item md={6} xs={12}>
+                <TextField
+                  fullWidth
+                  // helperText="Please specify the habit title"
+                  label="First name"
+                  name="firstName"
+                  onChange={(e) => setFirstName(e.target.value)}
+                  required
+                  value={firstName}
+                  variant="outlined"
+                />
+              </Grid>
+              <Grid item md={6} xs={12}>
+                <TextField
+                  fullWidth
+                  // helperText="Please specify the description"
+                  label="Last name"
+                  name="lastName"
+                  onChange={(e) => setLastName(e.target.value)}
+                  required
+                  value={lastName}
+                  variant="outlined"
+                />
+              </Grid>
+              <Grid item md={6} xs={12}>
+                <TextField
+                  fullWidth
+                  // helperText="Please specify the description"
+                  label="Username"
+                  name="username"
+                  onChange={(e) => setUsername(e.target.value)}
+                  required
+                  value={username}
+                  variant="outlined"
+                />
+              </Grid>
+              <Grid item md={6} xs={12}>
+                <TextField
+                  fullWidth
+                  // helperText="Please specify the description"
+                  label="Enter e-mail address"
+                  name="email"
+                  onChange={(e) => setEmail(e.target.value)} 
+                  required
+                  value={email}
+                  variant="outlined"
+                />
+              </Grid>
+              <Grid item md={6} xs={12}>
+                <TextField
+                  fullWidth
+                  // helperText="Please specify the description"
+                  label="Enter password"
+                  name="password"
+                  onChange={(e) => setPassword(e.target.value)}
+                  required
+                  value={password}
+                  variant="outlined"
+                />
+              </Grid>
+            </Grid>
+          </CardContent>
+          <Divider />
+          <Box
+            sx={{
+              display: "flex",
+              justifyContent: "flex-end",
+              p: 2,
+            }}
+          >
+            <Button color="primary" variant="contained" type="submit">
+              Sign up
+            </Button>
+          </Box>
+        </Card>
+
     </form>
     </Container>
     {error && error}
