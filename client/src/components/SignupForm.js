@@ -5,8 +5,6 @@ import {
   Box,
   Button,
   Container,
-  Stack,
-  Typography,
   Card,
   CardContent,
   CardHeader,
