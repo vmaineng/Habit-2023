@@ -30,7 +30,7 @@ Desktop view:
 </div>
 
 ## Project Demo
-[Click to view site] (https://tiny-task.vercel.app/)
+[Click to view site] (https://habit-2023.vercel.app/)
 
 ## Project Video
 
