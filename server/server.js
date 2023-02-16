@@ -27,6 +27,7 @@ app.use("/api/habits", habitRoutes);
 app.use("/api/users", userRoutes);
 
 // connect to DB && async
+mongoose.set("strictQuery", false);
 mongoose
   .connect(process.env.MONGO_URI)
   .then(() => {
