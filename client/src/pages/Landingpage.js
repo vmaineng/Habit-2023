@@ -3,8 +3,8 @@ import Navbar from "../components/Navbar";
 import Container from "@mui/material/Container";
 import Box from "@mui/material/Box";
 import Purple from "../assets/purple.png";
-import Banner from "../assets/banner.png"
-import Goal from "../assets/goal.png"
+import Banner from "../assets/banner.png";
+import Goal from "../assets/goal.png";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import Grid from "@mui/material/Grid";
@@ -12,10 +12,8 @@ import Note from "../assets/note.png";
 import { useTheme } from "@mui/material/styles";
 import Footer from "../components/Footer";
 
-import CardActionArea from '@mui/material/CardActionArea';
-import Paper from '@mui/material/Paper';
+import Paper from "@mui/material/Paper";
 import { Link } from "react-router-dom";
-
 
 function Landingpage() {
   let theme = useTheme();
@@ -32,50 +30,36 @@ function Landingpage() {
       <Navbar />
 
       <Paper
-      sx={{
-        position: 'relative',
-        backgroundColor: 'grey.800',
-        color: '#fff',
-        mb: 4,
-        backgroundSize: 'cover',
-        backgroundRepeat: 'no-repeat',
-        backgroundPosition: 'center',
-        backgroundImage: `url(${Banner})`,
-      }}
-    >
-      {/* Increase the priority of the hero background image */}
-      {<img style={{ display: 'none' }} src={Banner} alt={Banner} />}
-      <Box
         sx={{
-          position: 'absolute',
-          top: 0,
-          bottom: 0,
-          right: 0,
-          left: 0,
+          // position: "relative",
+          color: "#fff",
+          backgroundSize: "cover",
+          // backgroundRepeat: "no-repeat",
+          backgroundPosition: "center",
+          backgroundImage: `url(${Banner})`,
         }}
-      />
-      <Grid container>
-        <Grid item md={6}>
-        {/* <CardActionArea component="a" link={"/forward"}> */}
-          <Box
-            sx={{
-              position: 'relative',
-              p: { xs: 15, md: 20},
-              pr: { md: 0 },
-            }}
-          >
-            <Box textAlign='center' m={1}>
-           <Button variant="contained" size="large">
-                <Link to="/signup">Sign up Today</Link>
-              </Button>
-              </Box>
-          
-          </Box>
-          {/* </CardActionArea> */}
-        </Grid>
-      </Grid>
-    </Paper>
+      >
+        {/* Increase the priority of the hero background image */}
+        {<img style={{ display: "none" }} src={Banner} alt={Banner} />}
 
+        <Grid container>
+          <Grid item md={6}>
+            <Box
+              sx={{
+                position: "relative",
+                p: { xs: 10, md: 20 },
+                pr: { md: 0 },
+              }}
+            >
+              <Box textAlign="center" m={1}>
+                <Button variant="contained" size="large">
+                  <Link to="/signup">Sign up Today</Link>
+                </Button>
+              </Box>
+            </Box>
+          </Grid>
+        </Grid>
+      </Paper>
 
       <Container
         sx={{
@@ -88,8 +72,6 @@ function Landingpage() {
       >
         <Grid container spacing={2}>
           <Grid item xs={12}>
-       
-         
             <img src={Purple} alt="wonder" width="1100" height="500" />
           </Grid>
         </Grid>
@@ -98,7 +80,7 @@ function Landingpage() {
       {/* Values */}
       <Box
         component="section"
-        sx={{ display: "flex", overflow: "hidden", bgcolor: "cyan" }}
+        sx={{ display: "flex", overflow: "hidden", bgcolor: "tan" }}
       >
         <Container
           sx={{ mt: 1, mb: 10, display: "flex", position: "relative" }}
@@ -160,66 +142,62 @@ function Landingpage() {
         </Container>
       </Box>
 
-
-{/* Receive offers */}
-<Container component="section" sx={{ mt: 8, display: 'flex' }}>
-<Grid container>
-        <Grid item xs={12} md={6} sx={{ zIndex: 1 }}>
-          <Box
-            sx={{
-              display: 'flex',
-              justifyContent: 'center',
-              bgcolor: 'cyan',
-              py: 8,
-              px: 3,
-            }}
-          >
-            <Box sx={{ maxWidth: 400 }}>
-              <Typography variant="h2" component="h2" gutterBottom>
-                Receive offers
-              </Typography>
-              <Typography variant="h5">
-                Taste the holidays of the everyday close to home.
-              </Typography>
-            <input type="text" 
-            placholder="Your email" 
-            /> 
-            <br />
-              <Button
-                type="submit"
-                color="primary"
-                variant="contained"
-                sx={{ width: '100%' }}
-              >
-                Keep me updated
-              </Button>
+      {/* Receive offers */}
+      <Container component="section" sx={{ mt: 8, display: "flex", mb: 10 }}>
+        <Grid container>
+          <Grid item xs={12} md={6} sx={{ zIndex: 1 }}>
+            <Box
+              sx={{
+                display: "flex",
+                justifyContent: "center",
+                bgcolor: "cyan",
+                py: 8,
+                px: 3,
+              }}
+            >
+              <Box sx={{ maxWidth: 400 }}>
+                <Typography variant="h2" component="h2" gutterBottom>
+                  Receive offers
+                </Typography>
+                <Typography variant="h5">
+                  Taste the holidays of the everyday close to home.
+                </Typography>
+                <input type="text" placholder="Your email" />
+                <br />
+                <Button
+                  type="submit"
+                  color="primary"
+                  variant="contained"
+                  sx={{ width: "100%" }}
+                >
+                  Keep me updated
+                </Button>
+              </Box>
             </Box>
-          </Box>        
-</Grid>
-<Grid
-          item
-          xs={12}
-          md={6}
-          sx={{ display: { md: 'block', xs: 'none' }, position: 'relative' }}
-        >
-        
-          <Box
-            component="img"
-            src={Goal}
-            alt="goal"
-            sx={{
-              position: 'absolute',
-              top: -28,
-              left: -28,
-              right: 0,
-              bottom: 0,
-              width: '300%',
-              maxWidth: 700,
-            }}
-          />
+          </Grid>
+          <Grid
+            item
+            xs={12}
+            md={6}
+            sx={{ display: { md: "block", xs: "none" }, position: "relative" }}
+          >
+            <Box
+              component="img"
+              src={Goal}
+              alt="goal"
+              sx={{
+                position: "absolute",
+                top: -28,
+                left: -28,
+                right: 0,
+                bottom: 0,
+                width: "300%",
+                maxWidth: 700,
+              }}
+            />
+          </Grid>
         </Grid>
-        </Grid>
-</Container>
+      </Container>
 
       <Footer />
     </div>

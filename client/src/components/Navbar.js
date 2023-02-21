@@ -85,7 +85,7 @@ function Navbar() {
                     fontSize: "1.8 rem",
                   }}
                 >
-                  Habits
+                  Habit-sation
                 </Typography>
               </Box>
             </Grid>
