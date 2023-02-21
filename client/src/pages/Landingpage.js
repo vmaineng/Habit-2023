@@ -3,13 +3,19 @@ import Navbar from "../components/Navbar";
 import Container from "@mui/material/Container";
 import Box from "@mui/material/Box";
 import Purple from "../assets/purple.png";
+import Banner from "../assets/banner.png"
+import Goal from "../assets/goal.png"
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import Grid from "@mui/material/Grid";
 import Note from "../assets/note.png";
-import Goal from "../assets/goal.png";
 import { useTheme } from "@mui/material/styles";
 import Footer from "../components/Footer";
+
+import CardActionArea from '@mui/material/CardActionArea';
+import Paper from '@mui/material/Paper';
+import { Link } from "react-router-dom";
+
 
 function Landingpage() {
   let theme = useTheme();
@@ -25,6 +31,52 @@ function Landingpage() {
     <div>
       <Navbar />
 
+      <Paper
+      sx={{
+        position: 'relative',
+        backgroundColor: 'grey.800',
+        color: '#fff',
+        mb: 4,
+        backgroundSize: 'cover',
+        backgroundRepeat: 'no-repeat',
+        backgroundPosition: 'center',
+        backgroundImage: `url(${Banner})`,
+      }}
+    >
+      {/* Increase the priority of the hero background image */}
+      {<img style={{ display: 'none' }} src={Banner} alt={Banner} />}
+      <Box
+        sx={{
+          position: 'absolute',
+          top: 0,
+          bottom: 0,
+          right: 0,
+          left: 0,
+        }}
+      />
+      <Grid container>
+        <Grid item md={6}>
+        {/* <CardActionArea component="a" link={"/forward"}> */}
+          <Box
+            sx={{
+              position: 'relative',
+              p: { xs: 15, md: 20},
+              pr: { md: 0 },
+            }}
+          >
+            <Box textAlign='center' m={1}>
+           <Button variant="contained" size="large">
+                <Link to="/signup">Sign up Today</Link>
+              </Button>
+              </Box>
+          
+          </Box>
+          {/* </CardActionArea> */}
+        </Grid>
+      </Grid>
+    </Paper>
+
+
       <Container
         sx={{
           mt: 3,
@@ -36,27 +88,8 @@ function Landingpage() {
       >
         <Grid container spacing={2}>
           <Grid item xs={12}>
-            {/* <Box
-              sx={{
-                position: "absolute",
-                left: 0,
-                right: 0,
-                top: 0,
-                bottom: 0,
-                backgroundColor: "common.black",
-                opacity: 0.5,
-                zIndex: -1,
-              }}
-            /> */}
-
-            <Typography
-              color="inherit"
-              align="center"
-              variant="h2"
-              marked="center"
-            >
-              Habit Breaker
-            </Typography>
+       
+         
             <img src={Purple} alt="wonder" width="1100" height="500" />
           </Grid>
         </Grid>
