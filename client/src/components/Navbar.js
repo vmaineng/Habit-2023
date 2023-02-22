@@ -21,7 +21,7 @@ import Purple from "../assets/purple.png";
 
 function Navbar() {
   const pages = [ "Signup", "Login"];
-  const settings = ["Profile", "Dashboard", "Logout"];
+  const settings = ["Profile", "Logout"];
 
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
