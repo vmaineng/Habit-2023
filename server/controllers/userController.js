@@ -81,22 +81,37 @@ const updateUser = async (req, res) => {
   res.status(200).json({ user });
 };
 
-//for '/login' endpoint
 const login = async (req, res, next) => {
   const {email, password} = req.body;
-
-  if (!email || !password) throw new Error("Please provide an email and password");
-
-  const user = await User.findOne({ email}).select('+password');
-
-  if (!user) throw new Error("Invalid credientials");
-
-  const isMatch = await user.matchPassword(password);
-
-  if (!isMatch) throw new Error("Invalid credentials");
-
-  sendTokenResponse(user, 200, res);
+  User.findOne({email:email},(err,user)=>{
+    if(user){
+       if(password === user.password){
+           res.send({message:"login sucess",user:user})
+       }else{
+           res.send({message:"wrong credentials"})
+       }
+    }else{
+        res.send("not register")
+    }
+  })
 }
+
+//for '/login' endpoint
+// const login = async (req, res, next) => {
+//   const {email, password} = req.body;
+
+//   if (!email || !password) throw new Error("Please provide an email and password");
+
+//   const user = await User.findOne({email: email}).select('+password');
+
+//   if (!user) throw new Error("Invalid credientials");
+
+//   const isMatch = await user.matchPassword(password);
+
+//   if (!isMatch) throw new Error("Invalid credentials");
+
+  // sendTokenResponse(user, 200, res);
+// }
 
 // For '/logout' endpoint
 const logout = async (req, res, next) => {
@@ -109,20 +124,20 @@ const logout = async (req, res, next) => {
 }
 
 
-const sendTokenResponse = (user, statusCode, res) => {
-  const token = user.getSignedJwtToken(); 
+// const sendTokenResponse = (user, statusCode, res) => {
+//   const token = user.getSignedJwtToken(); 
 
-  const options = {
-      expires: new Date(Date.now() + process.env.JWT_COOKIE_EXPIRE * 24 * 60 * 60 * 1000), 
-      httpOnly: true 
-  }
+//   const options = {
+//       expires: new Date(Date.now() + process.env.JWT_COOKIE_EXPIRE * 24 * 60 * 60 * 1000), 
+//       httpOnly: true 
+//   }
 
-  if (process.env.NODE_ENV === 'production') options.secure = true;
+//   if (process.env.NODE_ENV === 'production') options.secure = true;
 
-  res
-  .status(statusCode)
-  .cookie('token', token, options)
-  .json({ success: true, token });
-} 
+//   res
+//   .status(statusCode)
+//   .cookie('token', token, options)
+//   .json({ success: true, token });
+// } 
 
 module.exports = { createUser, getUsers, getUser, deleteUser, updateUser, login, logout};

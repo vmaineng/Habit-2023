@@ -10,7 +10,6 @@ import { useState } from "react";
   Button,
   Grid,
   Divider,
-  Typography,
   TextField,
   useTheme,
 } from "@mui/material";
@@ -22,7 +21,7 @@ function LoginForm() {
   const [error, setError] = useState(null);
   const navigate = useNavigate();
 
-  const handleSubmit = async (e) => {
+  const handleSubmitLogin = async (e) => {
     e.preventDefault();
 
     const user = { email, password };
@@ -31,7 +30,7 @@ function LoginForm() {
       method: "POST",
       body: JSON.stringify(user),
       headers: {
-        "Content-Type": "application/json",
+        "Content-Type": "application/json"
       },
     });
 
@@ -51,7 +50,7 @@ function LoginForm() {
 
   return (
     <div>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmitLogin}>
       <Card
           sx={{
             mt: 5,
