@@ -9,14 +9,14 @@ import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import Grid from "@mui/material/Grid";
 import Note from "../assets/note.png";
-import { useTheme } from "@mui/material/styles";
+//import { useTheme } from "@mui/material/styles";
 import Footer from "../components/Footer";
 
 import Paper from "@mui/material/Paper";
 import { Link } from "react-router-dom";
 
 function Landingpage() {
-  let theme = useTheme();
+  //let theme = useTheme();
 
   const item = {
     display: "flex",
@@ -31,10 +31,8 @@ function Landingpage() {
 
       <Paper
         sx={{
-          // position: "relative",
-          color: "#fff",
+         height: 1/2,
           backgroundSize: "cover",
-          // backgroundRepeat: "no-repeat",
           backgroundPosition: "center",
           backgroundImage: `url(${Banner})`,
         }}
@@ -43,15 +41,19 @@ function Landingpage() {
         {<img style={{ display: "none" }} src={Banner} alt={Banner} />}
 
         <Grid container>
-          <Grid item md={6}>
+          <Grid item md={8}>
             <Box
               sx={{
                 position: "relative",
-                p: { xs: 10, md: 20 },
-                pr: { md: 0 },
+                p: {md: 20},
+                pt: { md: 25 },
               }}
             >
-              <Box textAlign="center" m={1}>
+              <Typography component="h2" variant="h2" align="left"> Capture your habits today!</Typography>
+              <Typography variant="subtitle1" color="text.secondary" align="left">
+              Best way to change your life is with the click of a button!
+            </Typography>
+              <Box textAlign="left" m={1}>
                 <Button variant="contained" size="large">
                   <Link to="/signup">Sign up Today</Link>
                 </Button>

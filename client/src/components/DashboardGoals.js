@@ -1,17 +1,12 @@
 import { useEffect, useState } from "react";
 import HabitDetails from "../components/HabitDetails";
-// import HabitForm from "../components/HabitForm";
 import { Link } from "react-router-dom";
-import {
-Grid,
-  useTheme,
-} from "@mui/material";
+import { Grid } from "@mui/material";
 
 function DashboardGoals() {
-  const theme = useTheme();
+ // const theme = useTheme();
 
   const [habits, setHabits] = useState(null);
-//state was set to null prior to []; trying []
 
   useEffect(() => {
     const fetchHabits = async () => {
@@ -30,12 +25,12 @@ function DashboardGoals() {
     setHabits(updatedHabits);
   }
 
-function updateHabit(updatedHabit) {
-  const updatedHabits = habits.map((habit) => {
-    return habit.id === updatedHabit.id ? updatedHabit : habit;
-  });
-  setHabits(updatedHabits);
-}
+  function updateHabit(updatedHabit) {
+    const updatedHabits = habits.map((habit) => {
+      return habit.id === updatedHabit.id ? updatedHabit : habit;
+    });
+    setHabits(updatedHabits);
+  }
 
   return (
     <div>

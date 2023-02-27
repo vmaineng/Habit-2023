@@ -1,18 +1,4 @@
 import React, { useState } from "react";
-// import {
-//   Box,
-//   Card,
-//   CardContent,
-//   Button,
-//   CardActions,
-//   Typography,
-//   IconButton,
-//   useTheme,
-//   FormControlLabel,
-//   Checkbox,
-//   Stack,
-// } from "@mui/material";
-
 import {
   Box,
   Button,
@@ -24,20 +10,17 @@ import {
   TableHead,
   TableRow,
   TableSortLabel,
-  useTheme,
+  //useTheme,
   Tooltip,
 } from "@mui/material";
-import ArrowRightIcon from "@mui/icons-material/ArrowRight";
 
-// import FeedIcon from "@mui/icons-material/Feed";
-// import { useForm, Controller } from "react-hook-form";
 
 function HabitDetails({ habit, deleteHabit, updateHabit }) {
   const [updatedHabit, setUpdatedHabit] = useState({
     description: habit.description
   });
 
-  const theme = useTheme();
+  //const theme = useTheme();
 
   function handleDeleteHabit(id) {
     fetch(`/api/habits/${id}`, {
