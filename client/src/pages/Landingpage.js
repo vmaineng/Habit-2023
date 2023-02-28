@@ -92,9 +92,9 @@ function Landingpage() {
             <Typography variant="subtitle2" paragraph color="text.secondary">
               We're making it easy for you to have the life you have always by breaking your goals into small and digestible pieces.
             </Typography>
-            <Typography variant="subtitle1" color="text">
+            <Button variant="contained" color="primary">
               Sign up today
-            </Typography>
+            </Button>
           </CardContent>
           <CardMedia
             component="img"
@@ -105,7 +105,6 @@ function Landingpage() {
         </Card>
       </CardActionArea>
 
-            {/* <img src={Purple} alt="wonder" width="1100" height="500" /> */}
           </Grid>
         </Grid>
 
