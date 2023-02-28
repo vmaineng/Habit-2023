@@ -12,18 +12,17 @@ function Footer() {
     <div>
       {/* Footer */}
       <Divider />
-      <Typography component="footer" sx={{ display: "flex", bgcolor: "lilac" }}>
-        <Container sx={{ my: 2, display: "flex" }}>
-          <Grid container spacing={5}>
-            <Grid item xs={6} sm={4} md={3}>
+      
+        <Container sx={{ my: 5, display: "flex", justifyContent: 'center' , width: '100%' }}>
+          <Grid container spacing={1000} >
+            <Grid item md={54}>
               <Grid
                 container
                 direction="column"
                 justifyContent="flex-end"
                 spacing={2}
-                sx={{ height: 120 }}
               >
-                <Grid item xs={6} sm={4} md={2}>
+                <Grid item xs={6} md={10}>
                   <Typography variant="h6" marked="left" gutterBottom>
                     Legal
                   </Typography>
@@ -42,7 +41,6 @@ function Footer() {
             </Grid>
           </Grid>
         </Container>
-      </Typography>
     </div>
   );
 }
