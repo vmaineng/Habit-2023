@@ -13,16 +13,16 @@ function Footer() {
       {/* Footer */}
       <Divider />
       
-        <Container sx={{ my: 5, display: "flex", justifyContent: 'center' , width: '100%' }}>
-          <Grid container spacing={1000} >
-            <Grid item md={54}>
+         <Container sx={{ my: 5, display: 'flex'}}>
+          <Grid container spacing={2}  >
+        
               <Grid
                 container
                 direction="column"
                 justifyContent="flex-end"
                 spacing={2}
               >
-                <Grid item xs={6} md={10}>
+                 <Grid item xs={6} md={10}>
                   <Typography variant="h6" marked="left" gutterBottom>
                     Legal
                   </Typography>
@@ -37,10 +37,10 @@ function Footer() {
                     </Box>
                   </Box>
                 </Grid>
-              </Grid>
+             
             </Grid>
           </Grid>
-        </Container>
+        </Container> 
     </div>
   );
 }

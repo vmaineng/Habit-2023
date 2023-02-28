@@ -4,7 +4,6 @@ import Typography from "@mui/material/Typography";
 import { Link } from "react-router-dom";
 import LoginForm from "../components/LoginForm";
 import Footer from "../components/Footer";
-import Box from '@mui/material/Box';
 
 function Login() {
   return (
@@ -18,9 +17,10 @@ function Login() {
           Sign Up here
         </Link>
       </Typography>
-      <Box sx={{ mt: 45}}>
+   <br />
+   <br />
       <Footer />
-      </Box>
+      
     </div>
   );
 }
