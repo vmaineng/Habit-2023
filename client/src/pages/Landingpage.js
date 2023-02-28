@@ -11,6 +11,10 @@ import Grid from "@mui/material/Grid";
 import Note from "../assets/note.png";
 //import { useTheme } from "@mui/material/styles";
 import Footer from "../components/Footer";
+import CardActionArea from '@mui/material/CardActionArea';
+import CardContent from '@mui/material/CardContent';
+import CardMedia from '@mui/material/CardMedia';
+import Card from '@mui/material/Card';
 
 import Paper from "@mui/material/Paper";
 import { Link } from "react-router-dom";
@@ -63,6 +67,7 @@ function Landingpage() {
         </Grid>
       </Paper>
 
+{/* Middle Card */}
       <Container
         sx={{
           mt: 3,
@@ -72,11 +77,38 @@ function Landingpage() {
           alignItems: "center",
         }}
       >
-        <Grid container spacing={2}>
-          <Grid item xs={12}>
-            <img src={Purple} alt="wonder" width="1100" height="500" />
+
+        <Grid container spacing={3}>
+          <Grid item xs={23} mt={6}>
+          <CardActionArea component="a" href="#">
+        <Card sx={{ display: 'flex' , backgroundColor: "#536B98"}}>
+          <CardContent sx={{ flex: 10 }}>
+            <Typography component="h2" variant="h2" color="text.secondary">
+              Do life well
+            </Typography>
+            <Typography variant="subtitle1" color="text.secondary">
+              And it can be done easily with the help of Habit-sation.
+            </Typography>
+            <Typography variant="subtitle2" paragraph color="text.secondary">
+              We're making it easy for you to have the life you have always by breaking your goals into small and digestible pieces.
+            </Typography>
+            <Typography variant="subtitle1" color="text">
+              Sign up today
+            </Typography>
+          </CardContent>
+          <CardMedia
+            component="img"
+            sx={{ width: 200, bowShadow: 1, display: { xs: 'none', sm: 'block' } }}
+            image={Purple}
+         
+          />
+        </Card>
+      </CardActionArea>
+
+            {/* <img src={Purple} alt="wonder" width="1100" height="500" /> */}
           </Grid>
         </Grid>
+
       </Container>
 
       {/* Values */}
