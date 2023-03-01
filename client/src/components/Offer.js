@@ -1,4 +1,4 @@
-import React from 'react'
+import React from "react";
 import Container from "@mui/material/Container";
 import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
@@ -9,7 +9,7 @@ import Goal from "../assets/goal.png";
 function Offer() {
   return (
     <div>
-           <Container component="section" sx={{ mt: 8, display: "flex", mb: 10 }}>
+      <Container component="section" sx={{ mt: 8, display: "flex", mb: 10 }}>
         <Grid container>
           <Grid item xs={12} md={6} sx={{ zIndex: 1 }}>
             <Box
@@ -65,7 +65,7 @@ function Offer() {
         </Grid>
       </Container>
     </div>
-  )
+  );
 }
 
-export default Offer
+export default Offer;

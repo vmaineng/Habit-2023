@@ -13,14 +13,14 @@ import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
 import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
-import {useTheme} from "@mui/material";
+import { useTheme } from "@mui/material";
 import Grid from "@mui/material/Grid";
 
 //for Avatar
 import Purple from "../assets/purple.png";
 
 function Navbar() {
-  const pages = [ "Signup", "Login"];
+  const pages = ["Signup", "Login"];
   const settings = ["Profile", "Logout"];
 
   const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -45,7 +45,6 @@ function Navbar() {
 
   return (
     <div>
-   
       <AppBar
         elevation={0}
         position="static"

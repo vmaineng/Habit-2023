@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { Grid } from "@mui/material";
 
 function DashboardGoals() {
- // const theme = useTheme();
+  // const theme = useTheme();
 
   const [habits, setHabits] = useState(null);
 

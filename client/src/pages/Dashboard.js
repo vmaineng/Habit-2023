@@ -13,7 +13,7 @@ import {
   Grid,
   Divider,
   Typography,
-IconButton,
+  IconButton,
   useTheme,
 } from "@mui/material";
 import FavoriteIcon from "@mui/icons-material/Favorite";
@@ -22,8 +22,7 @@ import DirectionsRunIcon from "@mui/icons-material/DirectionsRun";
 import { Doughnut } from "react-chartjs-2";
 import { Chart, ArcElement } from "chart.js";
 import { styled } from "@mui/material/styles";
-import AddToQueueIcon from '@mui/icons-material/AddToQueue';
-
+import AddToQueueIcon from "@mui/icons-material/AddToQueue";
 
 function Dashboard() {
   //need to register all elements using Chart.js - doughnut
@@ -38,7 +37,6 @@ function Dashboard() {
       paddingLeft: 100,
     },
   }));
-
 
   const theme = useTheme();
 
@@ -104,23 +102,21 @@ function Dashboard() {
       <Navbar />
 
       <Card
-      sx={{
-        py: 3,
-        boxShadow: 5,
-        textAlign: 'center',
-        color: "navy",
-        bgcolor: "#EDE9FF", border: "1px solid navy"
-      }}
-    > 
-
-
-    <Grid item xs={9}>
-        <AddToQueueIcon width={100} height={100} />
+        sx={{
+          py: 3,
+          boxShadow: 5,
+          textAlign: "center",
+          color: "navy",
+          bgcolor: "#EDE9FF",
+          border: "1px solid navy",
+        }}
+      >
+        <Grid item xs={9}>
+          <AddToQueueIcon width={100} height={100} />
         </Grid>
-  
-      <Typography variant="h3">My Weekly Goals</Typography>
 
-    </Card>
+        <Typography variant="h3">My Weekly Goals</Typography>
+      </Card>
 
       <Box
         component="main"
@@ -130,14 +126,15 @@ function Dashboard() {
         }}
       >
         <Container maxWidth={false}>
-
           {/* Tracker */}
-        <Tracker />
+          <Tracker />
 
-        {/* layout for doughnut and habits */}
+          {/* layout for doughnut and habits */}
           <DashboardLayoutRoot>
             <Grid item lg={8} md={12} xl={9} xs={12}>
-              <Card style={{backgroundColor: "#EDE9FF", border: "1px solid navy"}}  >
+              <Card
+                style={{ backgroundColor: "#EDE9FF", border: "1px solid navy" }}
+              >
                 <CardHeader title="Categories" />
                 <Divider />
                 <CardContent>
@@ -177,8 +174,8 @@ function Dashboard() {
                 </CardContent>
               </Card>
             </Grid>
-            <Box sx={{ p:15, mt: -13}}>
-            <DashboardGoals />
+            <Box sx={{ p: 15, mt: -13 }}>
+              <DashboardGoals />
             </Box>
           </DashboardLayoutRoot>
         </Container>

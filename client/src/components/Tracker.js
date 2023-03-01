@@ -14,21 +14,28 @@ function Tracker() {
         <Grid item xs={12}>
           <Typography variant="h5">Dashboard</Typography>
         </Grid>
-        <Card sx={{ minWidth: 275 }} style={{backgroundColor: "#EDE9FF", border: "1px solid navy"}} >
+        <Card
+          sx={{ minWidth: 275 }}
+          style={{ backgroundColor: "#EDE9FF", border: "1px solid navy" }}
+        >
           <CardHeader title="Total Completions" />
-                <Typography sx={{ fontSize:25}}>98%</Typography>
-                {/* <HabitDetails title="New page" variant="h5" /> */}
-
+          <Typography sx={{ fontSize: 25 }}>98%</Typography>
+          {/* <HabitDetails title="New page" variant="h5" /> */}
         </Card>
-        <Card sx={{ minWidth: 275 }} style={{backgroundColor: "#EDE9FF", border: "1px solid navy"}}>
+        <Card
+          sx={{ minWidth: 275 }}
+          style={{ backgroundColor: "#EDE9FF", border: "1px solid navy" }}
+        >
           <CardHeader title="Current Streak" />
-          <Typography sx={{ fontSize:25}}>98%</Typography>
-        
+          <Typography sx={{ fontSize: 25 }}>98%</Typography>
         </Card>
-        <Card sx={{ minWidth: 275 }} style={{backgroundColor: "#EDE9FF", border: "1px solid navy"}}>
+        <Card
+          sx={{ minWidth: 275 }}
+          style={{ backgroundColor: "#EDE9FF", border: "1px solid navy" }}
+        >
           <CardHeader title="Longest Streak" />
-          <Typography sx={{ fontSize:25}}>98%</Typography>
-              {/* <HabitDetails title="New page" variant="h5" /> */}
+          <Typography sx={{ fontSize: 25 }}>98%</Typography>
+          {/* <HabitDetails title="New page" variant="h5" /> */}
         </Card>
         {/* <Grid item xs={12} sm={6} md={4} lg={3}>
             <Typography  variant="h5">Dashboard</Typography>

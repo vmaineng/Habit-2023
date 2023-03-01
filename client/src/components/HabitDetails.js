@@ -14,10 +14,9 @@ import {
   Tooltip,
 } from "@mui/material";
 
-
 function HabitDetails({ habit, deleteHabit, updateHabit }) {
   const [updatedHabit, setUpdatedHabit] = useState({
-    description: habit.description
+    description: habit.description,
   });
 
   //const theme = useTheme();
@@ -45,7 +44,7 @@ function HabitDetails({ habit, deleteHabit, updateHabit }) {
       .then((updatedHabit) => {
         updateHabit(updatedHabit);
       })
-      .catch((err) => console.log('error:', err));
+      .catch((err) => console.log("error:", err));
   }
 
   // function handleHabitChange(e) {
@@ -57,50 +56,47 @@ function HabitDetails({ habit, deleteHabit, updateHabit }) {
 
   return (
     <div>
-      HabitDetail
-      <Card style={{backgroundColor: "#EDE9FF", border: "1px solid navy"}} >
-      <CardHeader title="Habits" />
-      <Box sx={{ minWidth: 800 }}>
-        <Table>
-          <TableHead>
-            <TableRow>
-              <TableCell>Order Ref</TableCell>
-              <TableCell>Customer</TableCell>
-              <TableCell sortDirection="desc">
-                <Tooltip enterDelay={300} title="Sort">
-                  <TableSortLabel active direction="desc">
-                    Date
-                  </TableSortLabel>
-                </Tooltip>
-              </TableCell>
-              <TableCell>Status</TableCell>
-            </TableRow>
-          </TableHead>
-          
-          <TableBody>
-            <TableRow hover key={habit.id}>
-              <TableCell>{habit.title}</TableCell>
-              <TableCell>{habit.description}</TableCell>
-              {/* <TableCell>
+      <br /> 
+      <Card style={{ backgroundColor: "#EDE9FF", border: "1px solid navy" }}>
+        <CardHeader title="Habits" />
+        <Box sx={{ minWidth: 800 }}>
+          <Table>
+            <TableHead>
+              <TableRow>
+                <TableCell>Order Ref</TableCell>
+                <TableCell>Customer</TableCell>
+                <TableCell sortDirection="desc">
+                  <Tooltip enterDelay={300} title="Sort">
+                    <TableSortLabel active direction="desc">
+                      Date
+                    </TableSortLabel>
+                  </Tooltip>
+                </TableCell>
+                <TableCell>Status</TableCell>
+              </TableRow>
+            </TableHead>
+
+            <TableBody>
+              <TableRow hover key={habit.id}>
+                <TableCell>{habit.title}</TableCell>
+                <TableCell>{habit.description}</TableCell>
+                {/* <TableCell>
                   {format(order.
                     createdAt, 'dd/MM/yyyy')}
                 </TableCell> */}
-                 
-            </TableRow>
-            
-          </TableBody>
-          
-        </Table>
-      </Box>
-     
-      <Box
-        sx={{
-          display: "flex",
-          justifyContent: "flex-end",
-          p: 2,
-        }}
-      >
-        {/* <Button
+              </TableRow>
+            </TableBody>
+          </Table>
+        </Box>
+
+        <Box
+          sx={{
+            display: "flex",
+            justifyContent: "flex-end",
+            p: 2,
+          }}
+        >
+          {/* <Button
           color="primary"
           endIcon={<ArrowRightIcon fontSize="small" />}
           size="small"
@@ -109,8 +105,8 @@ function HabitDetails({ habit, deleteHabit, updateHabit }) {
           View all
         </Button> */}
 
-        {/* //comeback to fix update */}
-        <form onSubmit={handleUpdateHabit}>
+          {/* //comeback to fix update */}
+          <form onSubmit={handleUpdateHabit}>
             <input
               type="text"
               name="updatedHabit.description"
@@ -120,9 +116,8 @@ function HabitDetails({ habit, deleteHabit, updateHabit }) {
             />
             <Button size="small">Update</Button>
           </form>
-     <Button onClick={() => handleDeleteHabit(habit._id)}>Delete</Button> 
-      </Box>
-      
+          <Button onClick={() => handleDeleteHabit(habit._id)}>Delete</Button>
+        </Box>
       </Card>
     </div>
   );

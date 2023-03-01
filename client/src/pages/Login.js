@@ -17,10 +17,9 @@ function Login() {
           Sign Up here
         </Link>
       </Typography>
-   <br />
-   <br />
+      <br />
+      <br />
       <Footer />
-      
     </div>
   );
 }

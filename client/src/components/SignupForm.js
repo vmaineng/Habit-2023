@@ -59,114 +59,113 @@ function SignupForm() {
 
   return (
     <div>
-    <Box
-          sx={{
-            marginTop: 4,
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'center',
-          }}
-        >
-          <Container maxWidth="sm">
-        <form onSubmit={handleSubmit}>
-        <Card
-          sx={{
-            mt: 5,
-            marginLeft: "10%",
-            color: "navy",
-            bgcolor: "#EDE9FF",
-            border: "1px solid navy",
-            display: "relative",
-            width: "75%",
-          }}
-        >
-          <CardHeader
-            subheader="I'm excited you're here today!"
-            title="Sign up"
-          />
-          <Divider />
-          <CardContent>
-            <Grid container spacing={3}>
-              <Grid item md={6} xs={12}>
-                <TextField
-                  fullWidth
-                  // helperText="Please specify the habit title"
-                  label="First name"
-                  name="firstName"
-                  onChange={(e) => setFirstName(e.target.value)}
-                  required
-                  value={firstName}
-                  variant="outlined"
-                />
-              </Grid>
-              <Grid item md={6} xs={12}>
-                <TextField
-                  fullWidth
-                  // helperText="Please specify the description"
-                  label="Last name"
-                  name="lastName"
-                  onChange={(e) => setLastName(e.target.value)}
-                  required
-                  value={lastName}
-                  variant="outlined"
-                />
-              </Grid>
-              <Grid item md={6} xs={12}>
-                <TextField
-                  fullWidth
-                  // helperText="Please specify the description"
-                  label="Username"
-                  name="username"
-                  onChange={(e) => setUsername(e.target.value)}
-                  required
-                  value={username}
-                  variant="outlined"
-                />
-              </Grid>
-              <Grid item md={6} xs={12}>
-                <TextField
-                  fullWidth
-                  // helperText="Please specify the description"
-                  label="Enter e-mail address"
-                  name="email"
-                  onChange={(e) => setEmail(e.target.value)} 
-                  required
-                  value={email}
-                  variant="outlined"
-                />
-              </Grid>
-              <Grid item md={6} xs={12}>
-                <TextField
-                  fullWidth
-                  // helperText="Please specify the description"
-                  label="Enter password"
-                  name="password"
-                  onChange={(e) => setPassword(e.target.value)}
-                  required
-                  value={password}
-                  variant="outlined"
-                />
-              </Grid>
-            </Grid>
-          </CardContent>
-          <Divider />
-          <Box
-            sx={{
-              display: "flex",
-              justifyContent: "flex-end",
-              p: 2,
-            }}
-          >
-            <Button color="primary" variant="contained" type="submit">
-              Sign up
-            </Button>
-          </Box>
-        </Card>
-
-    </form>
-    </Container>
-    {error && error}
-    </Box> 
+      <Box
+        sx={{
+          marginTop: 4,
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+        }}
+      >
+        <Container maxWidth="sm">
+          <form onSubmit={handleSubmit}>
+            <Card
+              sx={{
+                mt: 5,
+                marginLeft: "10%",
+                color: "navy",
+                bgcolor: "#EDE9FF",
+                border: "1px solid navy",
+                display: "relative",
+                width: "75%",
+              }}
+            >
+              <CardHeader
+                subheader="I'm excited you're here today!"
+                title="Sign up"
+              />
+              <Divider />
+              <CardContent>
+                <Grid container spacing={3}>
+                  <Grid item md={6} xs={12}>
+                    <TextField
+                      fullWidth
+                      // helperText="Please specify the habit title"
+                      label="First name"
+                      name="firstName"
+                      onChange={(e) => setFirstName(e.target.value)}
+                      required
+                      value={firstName}
+                      variant="outlined"
+                    />
+                  </Grid>
+                  <Grid item md={6} xs={12}>
+                    <TextField
+                      fullWidth
+                      // helperText="Please specify the description"
+                      label="Last name"
+                      name="lastName"
+                      onChange={(e) => setLastName(e.target.value)}
+                      required
+                      value={lastName}
+                      variant="outlined"
+                    />
+                  </Grid>
+                  <Grid item md={6} xs={12}>
+                    <TextField
+                      fullWidth
+                      // helperText="Please specify the description"
+                      label="Username"
+                      name="username"
+                      onChange={(e) => setUsername(e.target.value)}
+                      required
+                      value={username}
+                      variant="outlined"
+                    />
+                  </Grid>
+                  <Grid item md={6} xs={12}>
+                    <TextField
+                      fullWidth
+                      // helperText="Please specify the description"
+                      label="Enter e-mail address"
+                      name="email"
+                      onChange={(e) => setEmail(e.target.value)}
+                      required
+                      value={email}
+                      variant="outlined"
+                    />
+                  </Grid>
+                  <Grid item md={6} xs={12}>
+                    <TextField
+                      fullWidth
+                      // helperText="Please specify the description"
+                      label="Enter password"
+                      name="password"
+                      onChange={(e) => setPassword(e.target.value)}
+                      required
+                      value={password}
+                      variant="outlined"
+                    />
+                  </Grid>
+                </Grid>
+              </CardContent>
+              <Divider />
+              <Box
+                sx={{
+                  display: "flex",
+                  justifyContent: "flex-end",
+                  p: 2,
+                }}
+              >
+                <Button color="primary" variant="contained" type="submit">
+                  Sign up
+                </Button>
+              </Box>
+            </Card>
+          </form>
+        </Container>
+        {error && error}
+      </Box>
     </div>
   );
 }

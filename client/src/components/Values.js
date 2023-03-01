@@ -1,4 +1,4 @@
-import React from 'react'
+import React from "react";
 // import CardActionArea from '@mui/material/CardActionArea';
 // import CardContent from '@mui/material/CardContent';
 // import CardMedia from '@mui/material/CardMedia';
@@ -11,16 +11,16 @@ import Container from "@mui/material/Container";
 import Goal from "../assets/goal.png";
 
 function Values() {
-    const item = {
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-        px: 5,
-      };
-      
+  const item = {
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+    px: 5,
+  };
+
   return (
     <div>
-   <Box
+      <Box
         component="section"
         sx={{ display: "flex", overflow: "hidden", bgcolor: "tan" }}
       >
@@ -84,7 +84,7 @@ function Values() {
         </Container>
       </Box>
     </div>
-  )
+  );
 }
 
-export default Values
+export default Values;

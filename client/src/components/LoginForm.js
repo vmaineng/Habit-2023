@@ -1,8 +1,7 @@
 import { useState } from "react";
- import { useNavigate } from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
 
-
- import {
+import {
   Box,
   Card,
   CardContent,
@@ -13,7 +12,6 @@ import { useState } from "react";
   TextField,
   useTheme,
 } from "@mui/material";
-
 
 function LoginForm() {
   const [email, setEmail] = useState("");
@@ -30,7 +28,7 @@ function LoginForm() {
       method: "POST",
       body: JSON.stringify(user),
       headers: {
-        "Content-Type": "application/json"
+        "Content-Type": "application/json",
       },
     });
 
@@ -44,14 +42,14 @@ function LoginForm() {
       setEmail("");
       setPassword("");
       console.log("user logged in successfully");
-      navigate('/home')
+      navigate("/home");
     }
   };
 
   return (
     <div>
       <form onSubmit={handleSubmitLogin}>
-      <Card
+        <Card
           sx={{
             mt: 5,
             marginLeft: "10%",
@@ -61,10 +59,7 @@ function LoginForm() {
             width: "75%",
           }}
         >
-          <CardHeader
-            subheader="Welcome back! :)"
-            title="Login"
-          />
+          <CardHeader subheader="Welcome back! :)" title="Login" />
           <Divider />
           <CardContent>
             <Grid container spacing={3}>
@@ -103,11 +98,10 @@ function LoginForm() {
             }}
           >
             <Button color="primary" variant="contained" type="submit">
-             Log in
+              Log in
             </Button>
           </Box>
         </Card>
-       
       </form>
       {error && error}
     </div>

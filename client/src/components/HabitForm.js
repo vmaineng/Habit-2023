@@ -14,7 +14,6 @@ import {
   useTheme,
 } from "@mui/material";
 
-
 function HabitForm() {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
@@ -49,7 +48,6 @@ function HabitForm() {
 
   return (
     <div>
-      
       <form onSubmit={handleSubmit}>
         <Card
           sx={{

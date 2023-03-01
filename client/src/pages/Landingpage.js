@@ -126,7 +126,7 @@ function Landingpage() {
       <Values />
 
       {/* Receive offers */}
-   <Offer />
+      <Offer />
 
       <Footer />
     </div>

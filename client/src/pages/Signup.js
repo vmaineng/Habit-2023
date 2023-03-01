@@ -7,7 +7,6 @@ import Typography from "@mui/material/Typography";
 import Grid from "@mui/material/Grid";
 import Box from "@mui/material/Box";
 
-
 function Signup() {
   return (
     <div>
@@ -16,34 +15,22 @@ function Signup() {
         <Grid item xs={12}>
           <SignupForm />
           <Typography
-        component={Link}
-        to="/login"
-        variant="body1"
-        sx={{ textDecoration: "none" }}
-        color="primary"
-      >
-        {"Already a member? "}
-      </Typography>
+            component={Link}
+            to="/login"
+            variant="body1"
+            sx={{ textDecoration: "none" }}
+            color="primary"
+          >
+            {"Already a member? "}
+          </Typography>
         </Grid>
       </Box>
-
 
       {/* <Link to="/login" >
           Log in here
         </Link> */}
 
-
-      <Footer /> 
-
-      {/* <Typography
-        component={Link}
-        to="/login"
-        variant="body1"
-        sx={{ textDecoration: "none" }}
-        color="primary"
-      >
-        {"Already a member? "}
-      </Typography> */}
+      <Footer />
     </div>
   );
 }
