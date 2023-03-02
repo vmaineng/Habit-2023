@@ -56,7 +56,7 @@ function HabitDetails({ habit, deleteHabit, updateHabit }) {
 
   return (
     <div>
-      <br /> 
+      <br />
       <Card style={{ backgroundColor: "#EDE9FF", border: "1px solid navy" }}>
         <CardHeader title="Habits" />
         <Box sx={{ minWidth: 800 }}>
