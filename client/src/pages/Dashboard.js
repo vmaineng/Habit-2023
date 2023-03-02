@@ -1,5 +1,6 @@
 import React from "react";
 import Navbar from "../components/Navbar";
+import TopNav from "../components/TopNav";
 import DashboardGoals from "../components/DashboardGoals";
 import Tracker from "../components/Tracker";
 import Footer from "../components/Footer";
@@ -100,7 +101,8 @@ function Dashboard() {
   return (
     <div>
       <Navbar />
-
+      <TopNav />
+      <br /> 
       <Card
         sx={{
           py: 3,
