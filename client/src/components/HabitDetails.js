@@ -64,8 +64,8 @@ function HabitDetails({ habit, deleteHabit, updateHabit }) {
           <Table>
             <TableHead>
               <TableRow>
-                <TableCell>Order Ref</TableCell>
-                <TableCell>Customer</TableCell>
+                <TableCell>Name</TableCell>
+                <TableCell>Description</TableCell>
                 <TableCell sortDirection="desc">
                   <Tooltip enterDelay={300} title="Sort">
                     <TableSortLabel active direction="desc">

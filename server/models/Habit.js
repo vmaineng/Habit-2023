@@ -12,10 +12,10 @@ const habitSchema = new Schema({
         type: String,
         required: true
     },
-    completed: {
-        type: Boolean,
-        required: true
-    }
+    // completed: {
+    //     type: Boolean,
+    //     required: true
+    // }
 }, {timestamps: true})
 
 module.exports = mongoose.model('Habit', habitSchema)
