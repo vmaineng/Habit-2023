@@ -6,7 +6,7 @@ import { Grid } from "@mui/material";
 function DashboardGoals() {
   // const theme = useTheme();
 
-  const [habits, setHabits] = useState(null);
+  const [habits, setHabits] = useState([]);
 
   useEffect(() => {
     const fetchHabits = async () => {

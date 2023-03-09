@@ -15,6 +15,7 @@ import {
 } from "@mui/material";
 
 function HabitDetails({ habit, deleteHabit, updateHabit }) {
+  
   const [updatedHabit, setUpdatedHabit] = useState({
     description: habit.description,
   });
