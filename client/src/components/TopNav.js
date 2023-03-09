@@ -8,7 +8,7 @@ function TopNav() {
  <Box sx={{ width: '100%', mr: { xs: 0, md: 1 } }}>
         <FormControl sx={{ width: { xs: '100%', md: 300 } }}>
             <OutlinedInput
-                size="small"
+                size="medium"
                 id="search"
                 startAdornment={
                     <InputAdornment position="start" sx={{ mr: 1 }}>
