@@ -12,6 +12,7 @@ import {
   TableSortLabel,
   //useTheme,
   Tooltip,
+
 } from "@mui/material";
 
 function HabitDetails({ habit, deleteHabit, updateHabit }) {
@@ -68,7 +69,7 @@ function HabitDetails({ habit, deleteHabit, updateHabit }) {
                 <TableCell>Description</TableCell>
                 <TableCell sortDirection="desc">
                   <Tooltip enterDelay={300} title="Sort">
-                    <TableSortLabel active direction="desc">
+                    <TableSortLabel active direction="asc">
                       Date
                     </TableSortLabel>
                   </Tooltip>
