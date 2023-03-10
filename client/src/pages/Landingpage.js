@@ -13,7 +13,6 @@ import Note from "../assets/note.png";
 import Values from "../components/Values";
 import Offer from "../components/Offer";
 import Footer from "../components/Footer";
-import CardActionArea from "@mui/material/CardActionArea";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Card from "@mui/material/Card";
@@ -48,12 +47,12 @@ function Landingpage() {
                 pt: { md: 25 },
               }}
             >
-              <Typography component="h2" variant="h2" align="left">
+              <Typography component="h1" variant="h1" align="left">
                 {" "}
                 Capture your habits today!
               </Typography>
               <Typography
-                variant="subtitle1"
+                variant="h3"
                 color="text.secondary"
                 align="left"
               >
@@ -80,22 +79,21 @@ function Landingpage() {
         }}
       >
         <Grid container spacing={2}>
-          <Grid item xs={23} mt={6}>
-            
+          <Grid item xs={23}>
               <Card sx={{ display: "flex", backgroundColor: "#536B98" }}>
                 <CardContent sx={{ flex: 10 }}>
                   <Typography
-                    component="h2"
+                    component="h1"
                     variant="h2"
                     color="text.secondary"
                   >
                     Do life well
                   </Typography>
-                  <Typography variant="subtitle1" color="text.secondary">
+                  <Typography variant="h4" color="text.secondary">
                     And it can be done easily with the help of Habit-sation.
                   </Typography>
                   <Typography
-                    variant="subtitle2"
+                    variant="h6"
                     paragraph
                     color="text.secondary"
                   >

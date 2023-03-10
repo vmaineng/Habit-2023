@@ -36,7 +36,7 @@ function Values() {
                   alt="notepad"
                   sx={{ height: 55 }}
                 />
-                <Typography variant="h6" sx={{ my: 5 }}>
+                <Typography variant="h4" sx={{ my: 5 }}>
                   Motivated
                 </Typography>
                 <Typography variant="h5">
@@ -55,7 +55,7 @@ function Values() {
                   alt="notepad"
                   sx={{ height: 55 }}
                 />
-                <Typography variant="h6" sx={{ my: 5 }}>
+                <Typography variant="h4" sx={{ my: 5 }}>
                   Positivity
                 </Typography>
                 <Typography variant="h5">
@@ -72,7 +72,7 @@ function Values() {
                   alt="suitcase"
                   sx={{ height: 55 }}
                 />
-                <Typography variant="h6" sx={{ my: 3 }}>
+                <Typography variant="h4" sx={{ my: 3 }}>
                   Empower
                 </Typography>
                 <Typography variant="h5">
