@@ -70,7 +70,7 @@ function Landingpage() {
       </Paper>
 
       {/* Middle Card */}
-      <Container
+      <Paper
         sx={{
           mt: 3,
           mb: 10,
@@ -79,9 +79,9 @@ function Landingpage() {
           alignItems: "center",
         }}
       >
-        <Grid container spacing={3}>
+        <Grid container spacing={2}>
           <Grid item xs={23} mt={6}>
-            <CardActionArea component="a" href="#">
+            
               <Card sx={{ display: "flex", backgroundColor: "#536B98" }}>
                 <CardContent sx={{ flex: 10 }}>
                   <Typography
@@ -104,7 +104,7 @@ function Landingpage() {
                     pieces.
                   </Typography>
                   <Button variant="contained" color="primary">
-                    Sign up today
+                  <Link to="/signup">Sign up Today</Link>
                   </Button>
                 </CardContent>
                 <CardMedia
@@ -117,10 +117,10 @@ function Landingpage() {
                   image={Purple}
                 />
               </Card>
-            </CardActionArea>
+            
           </Grid>
         </Grid>
-      </Container>
+      </Paper>
 
       {/* Values */}
       <Values />
