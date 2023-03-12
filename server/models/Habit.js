@@ -12,6 +12,15 @@ const habitSchema = new Schema({
         type: String,
         required: true
     },
+    category: {
+        type: String, 
+        unique: false,
+        enum: [
+            "Health",
+            "Wealth",
+            "Self-love"
+        ]
+    },
     // completed: {
     //     type: Boolean,
     //     required: true

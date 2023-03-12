@@ -67,6 +67,7 @@ function HabitDetails({ habit, deleteHabit, updateHabit }) {
               <TableRow>
                 <TableCell>Name</TableCell>
                 <TableCell>Description</TableCell>
+                <TableCell>Category</TableCell>
                 <TableCell sortDirection="desc">
                   <Tooltip enterDelay={300} title="Sort">
                     <TableSortLabel active direction="asc">
@@ -74,7 +75,7 @@ function HabitDetails({ habit, deleteHabit, updateHabit }) {
                     </TableSortLabel>
                   </Tooltip>
                 </TableCell>
-                <TableCell>Status</TableCell>
+                {/* <TableCell>Status</TableCell> */}
               </TableRow>
             </TableHead>
 
@@ -82,6 +83,7 @@ function HabitDetails({ habit, deleteHabit, updateHabit }) {
               <TableRow hover key={habit.id}>
                 <TableCell>{habit.title}</TableCell>
                 <TableCell>{habit.description}</TableCell>
+                <TableCell>{habit.category}</TableCell>
                 {/* <TableCell>
                   {format(order.
                     createdAt, 'dd/MM/yyyy')}

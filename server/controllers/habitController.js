@@ -26,9 +26,9 @@ const getHabit = async (req, res) => {
 
 //create a new habit
 const createHabit = async (req, res, next) => {
-  const { title, description } = req.body;
+  const { title, description, category } = req.body;
   try {
-    const habit = await Habit.create({ title, description });
+    const habit = await Habit.create({ title, description, category });
     res.status(200).json(habit);
   } catch (error) {
     res.status(400).json({ error: error.message });

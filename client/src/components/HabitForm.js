@@ -16,13 +16,14 @@ import {
 function HabitForm() {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
+  const [category, setCategory] = useState("");
   const [error, setError] = useState(null);
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const habit = { title, description };
+    const habit = { title, description, category };
 
     const response = await fetch("/api/habits", {
       method: "POST",
@@ -39,6 +40,7 @@ function HabitForm() {
     if (response.ok) {
       setTitle("");
       setDescription("");
+      setCategory("");
       setError(null);
       console.log("new habit added");
       navigate("/home");
@@ -86,6 +88,18 @@ function HabitForm() {
                   onChange={(e) => setDescription(e.target.value)}
                   required
                   value={description}
+                  variant="outlined"
+                />
+              </Grid>
+              <Grid item md={6} xs={12}>
+                <TextField
+                  fullWidth
+                  helperText="Please specify the category"
+                  label="Habit category"
+                  name="category"
+                  onChange={(e) => setCategory(e.target.value)}
+                  required
+                  value={category}
                   variant="outlined"
                 />
               </Grid>
