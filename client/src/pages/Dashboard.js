@@ -52,7 +52,7 @@ function Dashboard() {
         hoverBorderColor: "#FFFFFF",
       },
     ],
-    labels: ["Health", "Wealth", "Wellness"],
+    labels: ["Health", "Wealth", "Self-love"],
   };
 
   const options = {
@@ -79,7 +79,7 @@ function Dashboard() {
 
   const genres = [
     {
-      title: "Health",
+      title: "Self-love",
       value: 63,
       icon: FavoriteIcon,
       color: "#3F51B5",
@@ -91,7 +91,7 @@ function Dashboard() {
       color: "#E53935",
     },
     {
-      title: "Wellness",
+      title: "Health",
       value: 23,
       icon: DirectionsRunIcon,
       color: "#FB8C00",
@@ -102,7 +102,7 @@ function Dashboard() {
     <div>
       <Navbar />
       <TopNav />
-      <br /> 
+      <br />
       <Card
         sx={{
           py: 3,

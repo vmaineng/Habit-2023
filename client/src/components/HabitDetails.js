@@ -12,11 +12,10 @@ import {
   TableSortLabel,
   //useTheme,
   Tooltip,
-
 } from "@mui/material";
 
 function HabitDetails({ habit, deleteHabit, updateHabit }) {
-  
+  const [data, setData] = useState([]);
   const [updatedHabit, setUpdatedHabit] = useState({
     description: habit.description,
   });
@@ -28,9 +27,12 @@ function HabitDetails({ habit, deleteHabit, updateHabit }) {
       method: "DELETE",
       headers: { Accept: "application/json" },
     }).then((r) => {
+      console.log(r)
       if (r.ok) {
         deleteHabit(id);
       }
+      //need to have the data refresh itself here
+      setData(deleteHabit)
     });
   }
 
@@ -118,7 +120,7 @@ function HabitDetails({ habit, deleteHabit, updateHabit }) {
               value={updatedHabit.description}
               onChange={(e) => setUpdatedHabit(e.target.value)}
             />
-            <Button size="small">Update</Button>
+            <Button size="small">Edit</Button>
           </form>
           <Button onClick={() => handleDeleteHabit(habit._id)}>Delete</Button>
         </Box>
