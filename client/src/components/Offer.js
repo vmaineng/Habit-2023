@@ -5,26 +5,26 @@ import Grid from "@mui/material/Grid";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import TextField from "@mui/material/TextField";
-import Stack from "@mui/material/Stack"
+import Stack from "@mui/material/Stack";
 import Goal from "../assets/goal.png";
 
 function Offer() {
   return (
     <div>
-      <Container sx={{ mt: 8, display: "flex", mb: 10, }}>
+      <Container sx={{ mt: 8, display: "flex", mb: 10 }}>
         <Grid container>
-          <Grid item  md={6} >
+          <Grid item md={6}>
             <Box
               sx={{
                 display: "flex",
                 justifyContent: "center",
-                border: '1px dashed grey',
+                border: "1px dashed grey",
                 py: 8,
                 px: 3,
-                '&:hover': {
-                  backgroundColor: 'primary.main',
+                "&:hover": {
+                  backgroundColor: "primary.main",
                   opacity: [0.9, 0.8, 0.7],
-                }
+                },
               }}
             >
               <Box sx={{ maxWidth: 400 }}>
@@ -41,20 +41,19 @@ function Offer() {
                   variant="filled"
                   label="Email address"
                   margin="dense"
-                  
                 />
-        
-           <Stack direction="row" spacing={5}>
-                <Button
-                  type="submit"
-                  color="primary"
-                  variant="contained"
-                  sx={{ width: "100%" }}
-                >
-                  Keep me updated
-                </Button>
+
+                <Stack direction="row" spacing={5}>
+                  <Button
+                    type="submit"
+                    color="primary"
+                    variant="contained"
+                    sx={{ width: "100%" }}
+                  >
+                    Keep me updated
+                  </Button>
                 </Stack>
-                </Box>
+              </Box>
             </Box>
           </Grid>
           <Grid
