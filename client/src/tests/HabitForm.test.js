@@ -1,3 +1,4 @@
+
 import { render, screen, waitFor} from '@testing-library/react'
 import { BrowserRouter } from 'react-router-dom';
 import HabitForm from '../components/HabitForm';
@@ -31,7 +32,7 @@ const wait = (milliseconds) => {
 }
 
 let mockApi = async (url) => {
-    if (url.startsWith('http://localhost:3000/') && url.includes('/habits')) {
+    if (url.startsWith('http://localhost:3000') && url.includes('/habits')) {
         await wait(70);
         return {
             ok: true,
@@ -49,13 +50,23 @@ afterEach(() => {
     jest.restoreAllMocks();
 })
 
+test('should render Add a new habit', async () => {
+    render(
+    <BrowserRouter>
+    <HabitForm />
+    </BrowserRouter>
+    );
+    const titleText = screen.getByText('Add a new habit');
+    expect(titleText).toBeInTheDocument();
+})
+
 test('should show titles after they are fetched', async () => {
     render (
     <BrowserRouter>
     <HabitForm />
     </BrowserRouter>);
     expect(windowFetchSpy).toHaveBeenCalled();
-    expect(windowFetchSpy).toHaveBeenCalledWith('http://localhost:3000//api/habits')
+    expect(windowFetchSpy).toHaveBeenCalledWith('http://localhost:3000/api/habits')
 
     await waitFor(() => {
         expect(screen.getByText('Wealth')).toBeInTheDocument();
