@@ -4,32 +4,47 @@ import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
+import TextField from "@mui/material/TextField";
+import Stack from "@mui/material/Stack"
 import Goal from "../assets/goal.png";
 
 function Offer() {
   return (
     <div>
-      <Container component="section" sx={{ mt: 8, display: "flex", mb: 10 }}>
+      <Container sx={{ mt: 8, display: "flex", mb: 10, }}>
         <Grid container>
-          <Grid item xs={12} md={6} sx={{ zIndex: 1 }}>
+          <Grid item  md={6} >
             <Box
               sx={{
                 display: "flex",
                 justifyContent: "center",
-                bgcolor: "cyan",
+                border: '1px dashed grey',
                 py: 8,
                 px: 3,
+                '&:hover': {
+                  backgroundColor: 'primary.main',
+                  opacity: [0.9, 0.8, 0.7],
+                }
               }}
             >
               <Box sx={{ maxWidth: 400 }}>
-                <Typography variant="h2" component="h2" gutterBottom>
+                <Typography variant="h3" component="h3" gutterBottom>
                   Receive offers
                 </Typography>
                 <Typography variant="h5">
                   Taste the holidays of the everyday close to home.
                 </Typography>
-                <input type="text" placholder="Your email" />
-                <br />
+
+                <TextField
+                  id="outlined-basic"
+                  color="lilac"
+                  variant="filled"
+                  label="Email address"
+                  margin="dense"
+                  
+                />
+        
+           <Stack direction="row" spacing={5}>
                 <Button
                   type="submit"
                   color="primary"
@@ -38,14 +53,15 @@ function Offer() {
                 >
                   Keep me updated
                 </Button>
-              </Box>
+                </Stack>
+                </Box>
             </Box>
           </Grid>
           <Grid
             item
             xs={12}
             md={6}
-            sx={{ display: { md: "block", xs: "none" }, position: "relative" }}
+            sx={{ display: { md: "block" }, position: "relative" }}
           >
             <Box
               component="img"
@@ -57,8 +73,8 @@ function Offer() {
                 left: -28,
                 right: 0,
                 bottom: 0,
-                width: "300%",
-                maxWidth: 700,
+                width: "500%",
+                maxWidth: 800,
               }}
             />
           </Grid>
