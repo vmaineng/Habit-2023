@@ -1,6 +1,6 @@
 import React from "react";
 import Navbar from "../components/Navbar";
-import TopNav from "../components/TopNav";
+import Search from "../components/Search";
 import DashboardGoals from "../components/DashboardGoals";
 import Tracker from "../components/Tracker";
 import Footer from "../components/Footer";
@@ -14,7 +14,6 @@ import {
   Grid,
   Divider,
   Typography,
-  IconButton,
   useTheme,
 } from "@mui/material";
 import FavoriteIcon from "@mui/icons-material/Favorite";
@@ -23,7 +22,6 @@ import DirectionsRunIcon from "@mui/icons-material/DirectionsRun";
 import { Doughnut } from "react-chartjs-2";
 import { Chart, ArcElement } from "chart.js";
 import { styled } from "@mui/material/styles";
-import AddToQueueIcon from "@mui/icons-material/AddToQueue";
 
 function Dashboard() {
   //need to register all elements using Chart.js - doughnut
@@ -101,7 +99,7 @@ function Dashboard() {
   return (
     <div>
       <Navbar />
-      <TopNav />
+      <Search />
       <br />
       <Card
         sx={{
@@ -113,10 +111,6 @@ function Dashboard() {
           border: "1px solid navy",
         }}
       >
-        <Grid item xs={9}>
-          <AddToQueueIcon width={100} height={100} />
-        </Grid>
-
         <Typography variant="h3">My Weekly Goals</Typography>
       </Card>
 
