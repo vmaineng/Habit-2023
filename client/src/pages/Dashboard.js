@@ -1,6 +1,6 @@
 import React from "react";
 import Navbar from "../components/Navbar";
-import Search from "../components/Search";
+// import Search from "../components/Search";
 import DashboardGoals from "../components/DashboardGoals";
 import Tracker from "../components/Tracker";
 import Footer from "../components/Footer";
@@ -99,7 +99,7 @@ function Dashboard() {
   return (
     <div>
       <Navbar />
-      <Search />
+      {/* <Search /> */}
       <br />
       <Card
         sx={{

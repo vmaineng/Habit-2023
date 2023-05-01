@@ -1,28 +1,25 @@
 import React from "react";
-import { Box, FormControl, InputAdornment, OutlinedInput } from "@mui/material";
+import { InputAdornment, OutlinedInput } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
 
-function Search() {
+function Search({search, onSearchChange}) {
   return (
     <div>
-      <Box>
-        <FormControl>
-          <OutlinedInput
-            size="medium"
-            id="search"
-            startAdornment={
-              <InputAdornment position="start" sx={{ mr: 1 }}>
-                {<SearchIcon />}
-              </InputAdornment>
-            }
-            aria-describedby="header-search-text"
-            inputProps={{
-              "aria-label": "weight",
-            }}
-            placeholder="Search"
-          />
-        </FormControl>
-      </Box>
+      <OutlinedInput
+        id="search"
+        startAdornment={
+          <InputAdornment position="start" sx={{ mr: 1 }}>
+            {<SearchIcon />}
+          </InputAdornment>
+        }
+        aria-describedby="header-search-text"
+        inputProps={{
+          "aria-label": "weight",
+        }}
+        placeholder="Search"
+        value={search}
+        onChange={(e) => onSearchChange(e.target.value)}
+      />
     </div>
   );
 }
