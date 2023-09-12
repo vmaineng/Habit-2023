@@ -42,6 +42,7 @@ let mockFetch = async (url) => {
   }
 };
 
+//set up and tear down
 beforeEach(() => {
   windowFetchSpy = jest.spyOn(window, "fetch").mockImplementation(mockFetch);
 });
