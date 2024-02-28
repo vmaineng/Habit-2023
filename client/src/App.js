@@ -20,6 +20,7 @@ function App() {
           <Route path="/signup" element={<Signup />} />
           <Route path="/login" element={<Login />} />
           <Route path="/new" element={<NewHabit />} />
+          <Route path="/logout" element={<Landingpage />} />
         </Routes>
       </BrowserRouter>
     </div>
