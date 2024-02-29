@@ -3,40 +3,48 @@ import React from "react";
 import Container from "@mui/material/Container";
 import Box from "@mui/material/Box";
 import Divider from "@mui/material/Divider";
+import Stack from "@mui/material/Stack";
 import Typography from "@mui/material/Typography";
 import Grid from "@mui/material/Grid";
 import Link from "@mui/material/Link";
 
+import { Facebook, Instagram, Twitter } from "@mui/icons-material/";
+
 function Footer() {
   return (
     <div>
-      {/* Footer */}
       <Divider />
+      <Box sx={{ height: "10px" }}>
+        <Stack direction={{ xs: "row", md: "row" }} p={7}>
+          <Box flex={1}>
+            <Typography align={"center"}>
+              Legal 
+            </Typography>
+            <Typography align={"center"}>
+               &copy;{new Date().getFullYear()}. All rights reserved
+            </Typography>
+          </Box>
+          <Box flex={1}>
+            <Typography align={"center"}>Terms Of Use</Typography>
+            <Typography align={"center"}>Privacy</Typography>
+            <Typography align={"center"}>Ad Choices</Typography>
+          </Box>
+          <Box flex={1}>
+            <Typography align={"center"}>Help Center</Typography>
+            <Typography align={"center"}>
+             Cookie Preferences
+            </Typography>
+           
+          </Box>
+          <Box>
+            <Typography align={"center"}>Follow Us</Typography>
+            <Facebook />
+            <Instagram />
+            <Twitter />
+          </Box>
+        </Stack>
+      </Box>
 
-      <Container sx={{ my: 5, display: "flex" }}>
-        <Grid container spacing={2}>
-          <Grid
-            container
-            direction="column"
-            justifyContent="flex-end"
-            spacing={2}
-          >
-            <Grid item xs={6} md={10}>
-              <Typography variant="h6" marked="left" gutterBottom>
-                Legal
-              </Typography>
-              <Box component="ul" sx={{ m: 0, listStyle: "none", p: 0 }}>
-                <Box component="li" sx={{ py: 0.5 }}>
-                  <Link href="/premium-themes/onepirate/terms/">Terms</Link>
-                </Box>
-                <Box component="li" sx={{ py: 0.5 }}>
-                  <Link href="/premium-themes/onepirate/privacy/">Privacy</Link>
-                </Box>
-              </Box>
-            </Grid>
-          </Grid>
-        </Grid>
-      </Container>
     </div>
   );
 }
