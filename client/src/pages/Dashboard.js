@@ -1,6 +1,7 @@
 import React from "react";
 import Navbar from "../components/Navbar";
 // import Search from "../components/Search";
+import Habitsation from "../assets/Habitsation.png";
 import DashboardGoals from "../components/DashboardGoals";
 import Tracker from "../components/Tracker";
 import Footer from "../components/Footer";
@@ -101,18 +102,22 @@ function Dashboard() {
       <Navbar />
       {/* <Search /> */}
       <br />
-      <Card
+      <Box
         sx={{
-          py: 3,
-          boxShadow: 5,
-          textAlign: "center",
-          color: "navy",
-          bgcolor: "#EDE9FF",
-          border: "1px solid navy",
+          backgroundImage: `url(${Habitsation})`,
+          backgroundRepeat: "no-repeat",
+          backgroundColor: "black",
+ 
+          backgroundPosition: "center",
+          backgroundSize: "cover",
+          height: 300,
+          width: "100%",
+          display: "flex",
+          justifyContent: "center",
         }}
       >
-        <Typography variant="h3">My Weekly Goals</Typography>
-      </Card>
+
+        </Box>
 
       <Box
         component="main"

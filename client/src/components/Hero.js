@@ -1,5 +1,6 @@
 import React from "react";
-import { Box, Typography, Button, Link } from "@mui/material";
+import { Box, Typography, Button } from "@mui/material";
+import { Link } from "react-router-dom";
 import Banner from "../assets/banner.png";
 
 function Hero() {
@@ -30,12 +31,12 @@ function Hero() {
               {" "}
               Capture your habits today!
             </Typography>
-            <Typography variant="h3" color="text.secondary" >
+            <Typography variant="h4" color="text.secondary" >
               Best way to change your life is with the click of a button!
             </Typography>
-            <Box textAlign="left" m={1}>
-              <Button variant="contained" size="large" align="center">
-                <Link to="/signup">Sign up Today</Link>
+            <Box textAlign="center" m={2}>
+              <Button variant="contained" size="large" >
+                <Link to="/signup" color="black">Sign up Today</Link>
               </Button>
             </Box>
           </Box>

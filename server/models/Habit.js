@@ -21,6 +21,9 @@ const habitSchema = new Schema({
             "Self-love"
         ]
     },
+    value: {
+        type: Number
+    }
     // completed: {
     //     type: Boolean,
     //     required: true

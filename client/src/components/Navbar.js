@@ -20,7 +20,7 @@ import Grid from "@mui/material/Grid";
 import Purple from "../assets/purple.png";
 
 function Navbar() {
-  const pages = ["About", "Signup", "Login"];
+  const pages = ["Signup", "Login"];
   const settings = ["Profile", "Logout"];
 
   const [anchorElNav, setAnchorElNav] = React.useState(null);

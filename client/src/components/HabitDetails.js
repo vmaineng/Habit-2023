@@ -10,7 +10,6 @@ import {
   TableHead,
   TableRow,
   TableSortLabel,
-  //useTheme,
   Tooltip,
 } from "@mui/material";
 
@@ -19,8 +18,6 @@ function HabitDetails({ habit, deleteHabit, updateHabit }) {
   const [updatedHabit, setUpdatedHabit] = useState({
     description: habit.description,
   });
-
-  //const theme = useTheme();
 
   function handleDeleteHabit(id) {
     fetch(`/api/habits/${id}`, {
@@ -70,6 +67,7 @@ function HabitDetails({ habit, deleteHabit, updateHabit }) {
                 <TableCell>Name</TableCell>
                 <TableCell>Description</TableCell>
                 <TableCell>Category</TableCell>
+                <TableCell>Value</TableCell>
                 <TableCell sortDirection="desc">
                   <Tooltip enterDelay={300} title="Sort">
                     <TableSortLabel active direction="asc">
@@ -86,6 +84,7 @@ function HabitDetails({ habit, deleteHabit, updateHabit }) {
                 <TableCell>{habit.title}</TableCell>
                 <TableCell>{habit.description}</TableCell>
                 <TableCell>{habit.category}</TableCell>
+                <TableCell>{habit.value}</TableCell>
                 {/* <TableCell>
                   {format(order.
                     createdAt, 'dd/MM/yyyy')}
