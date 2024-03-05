@@ -12,7 +12,7 @@ function Tracker() {
       >
         {/* row 1 */}
         <Grid item xs={12}>
-          <Typography variant="h5">Dashboard</Typography>
+          <Typography variant="h5">Welcome back, user.firstName</Typography>
         </Grid>
         <Card
           sx={{ minWidth: 275 }}

@@ -1,5 +1,5 @@
 import React from "react";
-import { InputAdornment, OutlinedInput } from "@mui/material";
+import { InputAdornment, OutlinedInput} from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
 
 function Search({search, onSearchChange}) {
@@ -8,8 +8,8 @@ function Search({search, onSearchChange}) {
       <OutlinedInput
         id="search"
         startAdornment={
-          <InputAdornment position="start" sx={{ mr: 1 }}>
-            {<SearchIcon />}
+          <InputAdornment position="start" sx={{ mr: 1 }} placeholder="Search">
+            <SearchIcon />
           </InputAdornment>
         }
         aria-describedby="header-search-text"

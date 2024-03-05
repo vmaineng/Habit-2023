@@ -39,7 +39,7 @@ function DashboardGoals() {
 
   return (
     <div>
-      <Search  />
+      {/* <Search  /> */}
       <Grid item lg={8} md={12} xl={9} xs={12}>
         {habits &&
           habits.map((habit) => (

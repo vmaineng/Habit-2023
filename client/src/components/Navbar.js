@@ -1,6 +1,4 @@
-// import React from 'react'
 import { Link } from "react-router-dom";
-
 import * as React from "react";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
@@ -15,6 +13,9 @@ import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import { useTheme } from "@mui/material";
 import Grid from "@mui/material/Grid";
+import SearchIcon from "@mui/icons-material/Search";
+import InputBase from "@mui/material/InputBase";
+import Search from "./Search";
 
 //for Avatar
 import Purple from "../assets/purple.png";
@@ -23,29 +24,83 @@ function Navbar() {
   const pages = ["Signup", "Login"];
   const settings = ["Profile", "Logout"];
 
-  const [anchorElNav, setAnchorElNav] = React.useState(null);
-  const [anchorElUser, setAnchorElUser] = React.useState(null);
+  // const [anchorElNav, setAnchorElNav] = React.useState(null);
+  // const [anchorElUser, setAnchorElUser] = React.useState(null);
 
-  const handleOpenNavMenu = (event) => {
-    setAnchorElNav(event.currentTarget);
-  };
-  const handleOpenUserMenu = (event) => {
-    setAnchorElUser(event.currentTarget);
-  };
+  // const handleOpenNavMenu = (event) => {
+  //   setAnchorElNav(event.currentTarget);
+  // };
+  // const handleOpenUserMenu = (event) => {
+  //   setAnchorElUser(event.currentTarget);
+  // };
 
-  const handleCloseNavMenu = () => {
-    setAnchorElNav(null);
-  };
+  // const handleCloseNavMenu = () => {
+  //   setAnchorElNav(null);
+  // };
 
-  const handleCloseUserMenu = () => {
-    setAnchorElUser(null);
-  };
+  // const handleCloseUserMenu = () => {
+  //   setAnchorElUser(null);
+  // };
 
   const theme = useTheme();
 
   return (
     <div>
-      <AppBar
+      <Box display="flex" justifyContent="space-between" p={2}>
+        <Grid item xs={1} sm={3} md={4} lg={3} sx={{ alignItems: "inherit" }}>
+          <Box display="flex" alignItems={"inherit"}>
+            <Typography
+              variant="h5"
+              component="a"
+              href="/"
+              sx={{
+                ml: 2,
+                display: { xs: "none", md: "flex" },
+                fontWeight: 900,
+
+                textDecoration: "none",
+                fontSize: "1.8 rem",
+              }}
+            >
+              Habit-sation
+            </Typography>
+          </Box>
+        </Grid>
+        <Box
+          display="flex"
+          backgroundColor={theme.palette.purple}
+          borderRadius="5px"
+        >
+          <Search />
+
+          <Box sx={{ display: "flex", justifyContent: "flex-end" }}>
+            {pages.map((page) => (
+              <Button
+                key={page}
+                // onClick={handleCloseNavMenu}
+                sx={{ my: 2, display: { xs: "none", md: "block" } }}
+              >
+                <Link to={`/${page}`} style={{ textDecoration: "none" }}>
+                  {page}
+                </Link>
+              </Button>
+            ))}
+
+            <IconButton
+              // onClick={handleOpenUserMenu}
+              sx={{ p: 0, marginLeft: 0 }}
+            >
+              <Avatar
+                alt="Place Kitten"
+                src={Purple}
+                sx={{ border: 1, borderColor: "white" }}
+              />
+            </IconButton>
+          </Box>
+        </Box>
+      </Box>
+
+      {/* <AppBar
         elevation={0}
         position="static"
         sx={{
@@ -220,7 +275,7 @@ function Navbar() {
             </Grid>
           </Grid>
         </Toolbar>
-      </AppBar>
+      </AppBar> */}
     </div>
   );
 }
