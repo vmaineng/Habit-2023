@@ -20,7 +20,7 @@ function HabitDetails({ habit, deleteHabit, updateHabit }) {
   const [data, setData] = useState([]);
 
   const handleComplete = () => {
-    setIsComplete(true);
+    setIsComplete(!isComplete);
   }
  // ! have completed go to another completed list
 
@@ -124,7 +124,7 @@ function HabitDetails({ habit, deleteHabit, updateHabit }) {
           </form>
           <Button onClick={() => handleDeleteHabit(habit._id)}>Delete</Button>
         <Button onClick={handleComplete}>
-          Complete
+         { isComplete ? 'Undo' : 'Completed'}
         </Button>
         </Box>
       </Card>
