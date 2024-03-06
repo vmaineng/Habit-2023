@@ -62,9 +62,7 @@ function HabitDetails({ habit, deleteHabit, updateHabit }) {
       <br />
       <Card style={{ backgroundColor: "#EDE9FF", border: "1px solid navy" }}>
         <CardHeader title="Habits" />
-        <Grid item xs={12}>
-          <Typography variant="h5">Welcome back, user.firstName</Typography>
-        </Grid>
+       
         <Box sx={{ minWidth: 800 }}>
           <Table>
             <TableHead>
