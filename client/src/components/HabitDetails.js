@@ -16,7 +16,14 @@ import {
 } from "@mui/material";
 
 function HabitDetails({ habit, deleteHabit, updateHabit }) {
+  const [isComplete, setIsComplete] = useState (false);
   const [data, setData] = useState([]);
+
+  const handleComplete = () => {
+    setIsComplete(true);
+  }
+ // ! have completed go to another completed list
+
   const [updatedHabit, setUpdatedHabit] = useState({
     description: habit.description,
   });
@@ -82,9 +89,9 @@ function HabitDetails({ habit, deleteHabit, updateHabit }) {
               </TableRow>
             </TableHead>
 
-            <TableBody>
+            <TableBody style={{ textDecoration: isComplete ? 'line-through' : 'none' }}>
               <TableRow hover key={habit.id}>
-                <TableCell>{habit.title}</TableCell>
+                <TableCell >{habit.title}</TableCell>
                 <TableCell>{habit.description}</TableCell>
                 <TableCell>{habit.category}</TableCell>
                 <TableCell>{habit.value}</TableCell>
@@ -113,9 +120,12 @@ function HabitDetails({ habit, deleteHabit, updateHabit }) {
               value={updatedHabit.description}
               onChange={(e) => setUpdatedHabit(e.target.value)}
             />
-            <Button size="small">Edit</Button>
+            <Button size="medium">Edit</Button>
           </form>
           <Button onClick={() => handleDeleteHabit(habit._id)}>Delete</Button>
+        <Button onClick={handleComplete}>
+          Complete
+        </Button>
         </Box>
       </Card>
     </div>
