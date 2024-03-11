@@ -1,13 +1,11 @@
 import { useEffect, useState } from "react";
 import HabitDetails from "../components/HabitDetails";
-import Search from "../components/Search";
 import { Link } from "react-router-dom";
 import { Grid } from "@mui/material";
 
 function DashboardGoals() {
-  // const theme = useTheme();
-
-  const [habits, setHabits] = useState([]);
+ const [habits, setHabits] = useState([]);
+ const [completedHabits, setCompletedHabits] = useState([]);
 
   useEffect(() => {
     const fetchHabits = async () => {
@@ -33,13 +31,14 @@ function DashboardGoals() {
     setHabits(updatedHabits);
   }
 
+
+
   // const searchWord = habits.filter((habit) => {
   //   return habit.title.toLowerCase().includes(habits.toLowerCase())
   // })
 
   return (
     <div>
-      {/* <Search  /> */}
       <Grid item lg={8} md={12} xl={9} xs={12}>
         {habits &&
           habits.map((habit) => (
@@ -48,7 +47,6 @@ function DashboardGoals() {
               habit={habit}
               deleteHabit={deleteHabit}
               updateHabit={updateHabit}
-            
             />
           ))}
         {/* <HabitForm /> */}

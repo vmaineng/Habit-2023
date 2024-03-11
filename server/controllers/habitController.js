@@ -74,4 +74,30 @@ const updateHabit = async (req, res) => {
   res.status(200).json({ habit });
 };
 
-module.exports = { createHabit, getHabits, getHabit, deleteHabit, updateHabit };
+
+const getChart = async (req, res) => { // ! update charts
+  try {
+    // Fetch existing chart data
+    const habit = await Habit.findOne();
+
+    // If chart data doesn't exist, create a new document
+    if (!habit) {
+      habit = new Habit();
+    }
+
+    // Update the values for the categories
+    habit.health = req.body.health;
+    habit.wealth = req.body.wealth;
+    habit.selfLove = req.body.selfLove;
+
+    // Save the updated chart data
+    await habit.save();
+
+    res.status(200).json({ message: 'Chart data updated successfully' });
+  } catch (error) {
+    console.error('Error updating chart data:', error);
+    res.status(500).json({ error: 'Internal server error' });
+  }
+};
+
+module.exports = { createHabit, getHabits, getHabit, deleteHabit, updateHabit, getChart };

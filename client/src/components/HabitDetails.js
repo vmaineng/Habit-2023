@@ -16,13 +16,13 @@ import {
 } from "@mui/material";
 
 function HabitDetails({ habit, deleteHabit, updateHabit }) {
-  const [isComplete, setIsComplete] = useState (false);
+  const [isComplete, setIsComplete] = useState(false);
   const [data, setData] = useState([]);
 
   const handleComplete = () => {
     setIsComplete(!isComplete);
-  }
- // ! have completed go to another completed list
+  };
+  // ! good to go back and reflect on what was completed
 
   const [updatedHabit, setUpdatedHabit] = useState({
     description: habit.description,
@@ -48,7 +48,7 @@ function HabitDetails({ habit, deleteHabit, updateHabit }) {
     fetch(`/api/habits/${habit.id}`, {
       method: "PATCH",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ description: e.target.updatedHabit }),
+      body: JSON.stringify({ description: updatedHabit.description }),
     })
       .then((r) => r.json())
       .then((updatedHabit) => {
@@ -69,7 +69,7 @@ function HabitDetails({ habit, deleteHabit, updateHabit }) {
       <br />
       <Card style={{ backgroundColor: "#EDE9FF", border: "1px solid navy" }}>
         <CardHeader title="Habits" />
-       
+
         <Box sx={{ minWidth: 800 }}>
           <Table>
             <TableHead>
@@ -89,44 +89,39 @@ function HabitDetails({ habit, deleteHabit, updateHabit }) {
               </TableRow>
             </TableHead>
 
-            <TableBody style={{ textDecoration: isComplete ? 'line-through' : 'none' }}>
-              <TableRow hover key={habit.id}>
-                <TableCell >{habit.title}</TableCell>
+            <TableBody>
+              <TableRow style={{ textDecoration: isComplete ? "line-through" : "none" }} key={habit.id}>
+                <TableCell>{habit.title}</TableCell>
                 <TableCell>{habit.description}</TableCell>
                 <TableCell>{habit.category}</TableCell>
                 <TableCell>{habit.value}</TableCell>
-                {/* <TableCell>
-                  {format(order.
-                    createdAt, 'dd/MM/yyyy')}
-                </TableCell> */}
+                <TableCell>
+                    <Button onClick={() => handleDeleteHabit(habit.id)}>
+                      Delete
+                    </Button>
+                    <Button onClick={handleComplete}>
+                      {isComplete ? "Undo" : "Complete"}
+                    </Button>
+                    <form onSubmit={(e) => handleUpdateHabit(e, habit.id)}>
+                      <input
+                        type="text"
+                        value={updatedHabit.description}
+                        onChange={(e) =>
+                          setUpdatedHabit({
+                            ...updatedHabit,
+                            description: e.target.value,
+                          })
+                        }
+                      />
+                      <Button type="submit">Edit</Button>
+                    </form>
+                  </TableCell>
               </TableRow>
             </TableBody>
           </Table>
         </Box>
 
-        <Box
-          sx={{
-            display: "flex",
-            justifyContent: "flex-end",
-            p: 2,
-          }}
-        >
-          {/* //comeback to fix update */}
-          <form onSubmit={handleUpdateHabit}>
-            <input
-              type="text"
-              name="updatedHabit.description"
-              placeholder="update description"
-              value={updatedHabit.description}
-              onChange={(e) => setUpdatedHabit(e.target.value)}
-            />
-            <Button size="medium">Edit</Button>
-          </form>
-          <Button onClick={() => handleDeleteHabit(habit._id)}>Delete</Button>
-        <Button onClick={handleComplete}>
-         { isComplete ? 'Undo' : 'Completed'}
-        </Button>
-        </Box>
+     
       </Card>
     </div>
   );

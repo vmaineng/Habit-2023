@@ -13,16 +13,21 @@ import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import { useTheme } from "@mui/material";
 import Grid from "@mui/material/Grid";
-import SearchIcon from "@mui/icons-material/Search";
-import InputBase from "@mui/material/InputBase";
 import Search from "./Search";
+
 
 //for Avatar
 import Purple from "../assets/purple.png";
 
+
 function Navbar() {
-  const pages = ["Signup", "Login"];
-  const settings = ["Profile", "Logout"];
+  // const pages = ["Signup", "Login"];
+  // const settings = ["Profile", "Logout"];
+// const [isUser, setIsUser] = useState(false);
+
+// const responseGoogle = (response) => {
+//   setIsUser(true); //upon successful login
+// }
 
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
@@ -43,6 +48,10 @@ function Navbar() {
   };
 
   const theme = useTheme();
+
+  //   const searchWord = habits.filter((habit) => {
+  //   return habit.title.toLowerCase().includes(habits.toLowerCase())
+  // })
 
   return (
     <div>
@@ -99,7 +108,8 @@ function Navbar() {
                 >
                   <Search />
                 </Box>
-                {pages.map((page) => (
+               
+                {/* {pages.map((page) => (
                   <Button
                     key={page}
                     onClick={handleCloseNavMenu}
@@ -109,7 +119,7 @@ function Navbar() {
                       {page}
                     </Link>
                   </Button>
-                ))}
+                ))} */}
 
                 <Tooltip title="Open settings">
                   <IconButton
@@ -145,7 +155,7 @@ function Navbar() {
                     },
                   }}
                 >
-                  {settings.map((setting) => (
+                  {/* {settings.map((setting) => (
                     <MenuItem key={setting} onClick={handleCloseUserMenu}>
                       <Typography textAlign="center">
                         <Button
@@ -163,7 +173,7 @@ function Navbar() {
                         </Button>
                       </Typography>
                     </MenuItem>
-                  ))}
+                  ))} */}
                 </Menu>
                 <IconButton
                   size="large"
@@ -200,7 +210,7 @@ function Navbar() {
                     },
                   }}
                 >
-                  {pages.map((page) => (
+                  {/* {pages.map((page) => (
                     <MenuItem
                       key={page}
                       onClick={handleCloseNavMenu}
@@ -221,7 +231,7 @@ function Navbar() {
                           {page}
                         </Button>
                       </Typography>
-                    </MenuItem>
+                    </MenuItem> */}
                   ))}
                 </Menu>
               </Box>

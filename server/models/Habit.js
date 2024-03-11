@@ -21,9 +21,18 @@ const habitSchema = new Schema({
             "Self-love"
         ]
     },
-    value: {
-        type: Number
-    }
+    health: {
+        type: Number,
+        default: 80
+      },
+      wealth: {
+        type: Number,
+        default: 50
+      },
+      selfLove: {
+        type: Number,
+        default: 0
+      }
     // completed: {
     //     type: Boolean,
     //     required: true
