@@ -1,5 +1,6 @@
 // const { default: mongoose } = require("mongoose");
 const User = require("../models/User");
+const {OAuth2Client, OAuth2Client} = require('google-auth-library');
 
 //get all users
 const getUsers = async (req, res, next) => {
@@ -139,5 +140,26 @@ const logout = async (req, res, next) => {
 //   .cookie('token', token, options)
 //   .json({ success: true, token });
 // } 
+
+const googleResponse = async( req, res, next) {
+  res.header('Access-Control-Allow-Origin', 'http://localhost:3000');
+  res.header('Referrer-Policy', 'no-referrer-when-downgrade');
+
+  const redirectUrl = 'http://localhost:4000/oauth';
+
+  const OAuth2Client = new OAuth2Client(
+    process.env.CLIENT_ID,
+    process.env.CLIENT_SECRET,
+    redirectUrl
+  );
+
+  const authorizeUrl = OAuth2Client({
+    access_type:'offline',
+    scope: 'https://www.googleapis.com/auth/userinfo.profile openid',
+    prompt: 'consent'
+  });
+
+  res.json({url:authorizeUrl})
+}
 
 module.exports = { createUser, getUsers, getUser, deleteUser, updateUser, login, logout};
