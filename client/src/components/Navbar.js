@@ -21,8 +21,8 @@ import Purple from "../assets/purple.png";
 
 
 function Navbar() {
-  // const pages = ["Signup", "Login"];
-  // const settings = ["Profile", "Logout"];
+  const pages = ["Signup", "Login"];
+  const settings = ["Profile", "Logout"];
 // const [isUser, setIsUser] = useState(false);
 
 // const responseGoogle = (response) => {
@@ -109,7 +109,7 @@ function Navbar() {
                   <Search />
                 </Box>
                
-                {/* {pages.map((page) => (
+                {pages.map((page) => (
                   <Button
                     key={page}
                     onClick={handleCloseNavMenu}
@@ -119,7 +119,7 @@ function Navbar() {
                       {page}
                     </Link>
                   </Button>
-                ))} */}
+                ))}
 
                 <Tooltip title="Open settings">
                   <IconButton
@@ -155,7 +155,7 @@ function Navbar() {
                     },
                   }}
                 >
-                  {/* {settings.map((setting) => (
+                  {settings.map((setting) => (
                     <MenuItem key={setting} onClick={handleCloseUserMenu}>
                       <Typography textAlign="center">
                         <Button
@@ -173,7 +173,7 @@ function Navbar() {
                         </Button>
                       </Typography>
                     </MenuItem>
-                  ))} */}
+                  ))}
                 </Menu>
                 <IconButton
                   size="large"
@@ -210,7 +210,7 @@ function Navbar() {
                     },
                   }}
                 >
-                  {/* {pages.map((page) => (
+                  {pages.map((page) => (
                     <MenuItem
                       key={page}
                       onClick={handleCloseNavMenu}
@@ -231,7 +231,7 @@ function Navbar() {
                           {page}
                         </Button>
                       </Typography>
-                    </MenuItem> */}
+                    </MenuItem>
                   ))}
                 </Menu>
               </Box>
